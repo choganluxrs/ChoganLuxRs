@@ -59,838 +59,8 @@
       <link href="./index.css" rel="stylesheet" />
 
       <div class="home-container10">
-        <section id="chogan-insta-cta" class="insta-luxury-section">
-          <div class="insta-background-container">
-            <img
-              alt="Luxury Background"
-              src="https://images.pexels.com/photos/30895543/pexels-photo-30895543.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-              class="bg-texture"
-            />
-            <div class="home-thq-bg-overlay-elm1 bg-overlay"></div>
-          </div>
-          <div class="insta-content-wrapper">
-            <div class="home-container11">
-              <div class="home-container12">
-                <style>
-                  #luxury-hero {
-                    position: relative;
-                    width: 100%;
-                    height: 100vh;
-                    min-height: 800px;
-                    background-color: var(--black-deep);
-                    overflow: hidden;
-                    display: flex;
-                    align-items: center;
-                    color: #ffffff;
-                    font-family: var(--font-main);
-                  }
-                </style>
-              </div>
-            </div>
-            <section id="luxury-hero" class="hero-container">
-              <div class="hero-bg-wrapper">
-                <img
-                  src="https://images.pexels.com/photos/6945831/pexels-photo-6945831.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
-                  alt="Premium Perfume Bottle"
-                  id="hero-image"
-                  class="hero-bg-image"
-                />
-                <div class="hero-overlay"></div>
-              </div>
-              <div class="gold-accent-circle circle-1"></div>
-              <div class="gold-accent-circle circle-2"></div>
-              <div class="content-wrapper">
-                <div class="text-block">
-                  <div class="brand-eyebrow">
-                    <span class="line"></span>
-                    <span class="eyebrow-text">ESTABLISHED IN EXCELLENCE</span>
-                  </div>
-                  <h1 class="brand-title">
-                    <span class="home-thq-title-word-elm1 accent">CHOGAN</span>
-                    <span class="home-thq-title-word-elm2 accent">LUX</span>
-                    <span class="home-thq-title-word-elm3 accent">RS</span>
-                  </h1>
-                  <p class="brand-description">
-                    Immerse yourself in a world of olfactory opulence. Our
-                    curated collection of high-end fragrances captures the
-                    essence of sophistication, bottled for the discerning
-                    individual.
-                  </p>
-                  <div class="cta-group">
-                    <a href="#">
-                      <div class="btn-gold">
-                        <span class="btn-text">SHOP COLLECTION</span>
-                        <span class="btn-icon">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <path d="M5 12h14m-7-7l7 7l-7 7"></path>
-                          </svg>
-                        </span>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <div class="btn-outline">
-                        <span>EXPLORE THE ARTISTRY</span>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="side-branding">
-                  <span class="side-text">
-                    PURE ESSENCE • PREMIUM QUALITY • UNFORGETTABLE SCENT
-                  </span>
-                </div>
-              </div>
-              <div class="scroll-indicator">
-                <div class="mouse"><div class="wheel"></div></div>
-                <span class="scroll-text">DISCOVER MORE</span>
-              </div>
-            </section>
-            <div class="home-container13">
-              <div class="home-container14">
-                <style>
-                          @keyframes float {0% {transform: translate(0, 0) rotate(0deg);}
-                  100% {transform: translate(30px, 40px) rotate(10deg);}}@keyframes scrollWheel {0% {transform: translate(-50%, 0);
-                  opacity: 1;}
-                  100% {transform: translate(-50%, 15px);
-                  opacity: 0;}}@keyframes fadeInUp {to {opacity: 1;
-                  transform: translateY(0);}}
-                </style>
-              </div>
-            </div>
-            <div class="home-container15">
-              <div class="home-container16">
-                <script>
-                  document.addEventListener('DOMContentLoaded', function() {
-                    (function(){
-                      ;(function () {
-                        const heroImage = document.getElementById("hero-image")
-                        const heroContainer = document.getElementById("luxury-hero")
-
-                        // Subtle parallax effect on mouse move
-                        heroContainer.addEventListener("mousemove", (e) => {
-                          const { clientX, clientY } = e
-                          const xPos = (clientX / window.innerWidth - 0.5) * 20
-                          const yPos = (clientY / window.innerHeight - 0.5) * 20
-
-                          heroImage.style.transform = `scale(1.1) translate(${xPos}px, ${yPos}px)`
-                        })
-
-                        // Reset transform on mouse leave
-                        heroContainer.addEventListener("mouseleave", () => {
-                          heroImage.style.transform = `scale(1.05) translate(0, 0)`
-                        })
-
-                        // Initial entrance animation for the background
-                        window.onload = () => {
-                          heroImage.style.transform = "scale(1.05)"
-                        }
-                      })()
-                    })()
-                  });
-                </script>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="chogan-luxury-grid" class="luxury-grid-container">
-          <div class="grid-header">
-            <div class="header-line"></div>
-            <h2 class="section-title">The Signature Collection</h2>
-            <p class="section-subtitle">
-              Exquisite essences crafted for the discerning elite. Experience
-              the art of olfactory perfection.
-            </p>
-          </div>
-          <div class="product-wrapper">
-            <div id="card-1" class="perfume-card">
-              <div class="card-inner">
-                <div class="image-box">
-                  <img
-                    src="https://images.pexels.com/photos/7702669/pexels-photo-7702669.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    alt="Noir Absolute"
-                    class="perfume-img"
-                  />
-                  <div class="card-overlay">
-                    <button aria-label="Add to cart" class="quick-add">
-                      <span class="icon-svg">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                        >
-                          <g
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                          >
-                            <path
-                              d="M16 10a4 4 0 0 1-8 0M3.103 6.034h17.794"
-                            ></path>
-                            <path
-                              d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"
-                            ></path>
-                          </g>
-                        </svg>
-                      </span>
-                      <span class="btn-text">Quick Add</span>
-                    </button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <div class="info-top">
-                    <span class="category">Extrait de Parfum</span>
-                    <div class="rating">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.12 2.12 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.12 2.12 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.12 2.12 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16z"
-                        ></path>
-                      </svg>
-                      <span>4.9</span>
-                    </div>
-                  </div>
-                  <h3 class="product-name">Noir Absolute</h3>
-                  <p class="price">€120.00</p>
-                </div>
-              </div>
-            </div>
-            <div id="card-2" class="perfume-card">
-              <div class="card-inner">
-                <div class="image-box">
-                  <img
-                    src="https://images.pexels.com/photos/14466493/pexels-photo-14466493.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    alt="Aurum Essence"
-                    class="perfume-img"
-                  />
-                  <div class="card-overlay">
-                    <button aria-label="Add to cart" class="quick-add">
-                      <span class="icon-svg">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                        >
-                          <g
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                          >
-                            <path
-                              d="M16 10a4 4 0 0 1-8 0M3.103 6.034h17.794"
-                            ></path>
-                            <path
-                              d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"
-                            ></path>
-                          </g>
-                        </svg>
-                      </span>
-                      <span class="btn-text">Quick Add</span>
-                    </button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <div class="info-top">
-                    <span class="category">Limited Edition</span>
-                    <div class="rating">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.12 2.12 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.12 2.12 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.12 2.12 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16z"
-                        ></path>
-                      </svg>
-                      <span>5.0</span>
-                    </div>
-                  </div>
-                  <h3 class="product-name">Aurum Essence</h3>
-                  <p class="price">€145.00</p>
-                </div>
-              </div>
-            </div>
-            <div id="card-3" class="perfume-card">
-              <div class="card-inner">
-                <div class="image-box">
-                  <img
-                    src="https://images.pexels.com/photos/21008941/pexels-photo-21008941.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    alt="Velvet Oud"
-                    class="perfume-img"
-                  />
-                  <div class="card-overlay">
-                    <button aria-label="Add to cart" class="quick-add">
-                      <span class="icon-svg">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                        >
-                          <g
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                          >
-                            <path
-                              d="M16 10a4 4 0 0 1-8 0M3.103 6.034h17.794"
-                            ></path>
-                            <path
-                              d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"
-                            ></path>
-                          </g>
-                        </svg>
-                      </span>
-                      <span class="btn-text">Quick Add</span>
-                    </button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <div class="info-top">
-                    <span class="category">Luxury Collection</span>
-                    <div class="rating">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.12 2.12 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.12 2.12 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.12 2.12 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16z"
-                        ></path>
-                      </svg>
-                      <span>4.8</span>
-                    </div>
-                  </div>
-                  <h3 class="product-name">Velvet Oud</h3>
-                  <p class="price">€115.00</p>
-                </div>
-              </div>
-            </div>
-            <div id="card-4" class="perfume-card">
-              <div class="card-inner">
-                <div class="image-box">
-                  <img
-                    src="https://images.pexels.com/photos/35488878/pexels-photo-35488878.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    alt="Imperial Night"
-                    class="perfume-img"
-                  />
-                  <div class="card-overlay">
-                    <button aria-label="Add to cart" class="quick-add">
-                      <span class="icon-svg">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                        >
-                          <g
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                          >
-                            <path
-                              d="M16 10a4 4 0 0 1-8 0M3.103 6.034h17.794"
-                            ></path>
-                            <path
-                              d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"
-                            ></path>
-                          </g>
-                        </svg>
-                      </span>
-                      <span class="btn-text">Quick Add</span>
-                    </button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <div class="info-top">
-                    <span class="category">Prestige Series</span>
-                    <div class="rating">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.12 2.12 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.12 2.12 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.12 2.12 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16z"
-                        ></path>
-                      </svg>
-                      <span>4.9</span>
-                    </div>
-                  </div>
-                  <h3 class="product-name">Imperial Night</h3>
-                  <p class="price">€138.00</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="footer-cta">
-            <a href="#">
-              <div class="view-all-btn"><span>Discover All Essences</span></div>
-            </a>
-          </div>
-        </section>
-        <div class="home-container17">
-          <div class="home-container18">
-            <script>
-              document.addEventListener('DOMContentLoaded', function() {
-                (function(){
-                  // Subtle parallax effect on mouse move for the frame
-                  const section = document.getElementById("chogan-insta-cta")
-                  const frame = section.querySelector(".insta-visual-frame")
-
-                  section.addEventListener("mousemove", (e) => {
-                    const { clientX, clientY } = e
-                    const { left, top, width, height } = section.getBoundingClientRect()
-
-                    const x = (clientX - left) / width - 0.5
-                    const y = (clientY - top) / height - 0.5
-
-                    const moveX = x * 20 // 20px max movement
-                    const moveY = y * 20
-
-                    frame.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`
-                  })
-
-                  section.addEventListener("mouseleave", () => {
-                    frame.style.transform = `translate3d(0, 0, 0)`
-                    frame.style.transition = "transform 0.5s ease-out"
-                  })
-
-                  section.addEventListener("mouseenter", () => {
-                    frame.style.transition = "none"
-                  })
-                })()
-              });
-            </script>
-          </div>
-        </div>
-        <div class="home-container19">
-          <div class="home-container20">
-            <script>
-              document.addEventListener('DOMContentLoaded', function() {
-                (function(){
-                  // Subtle parallax effect on mouse move for the frame
-                  const section = document.getElementById("chogan-insta-cta")
-                  const frame = section.querySelector(".insta-visual-frame")
-
-                  section.addEventListener("mousemove", (e) => {
-                    const { clientX, clientY } = e
-                    const { left, top, width, height } = section.getBoundingClientRect()
-
-                    const x = (clientX - left) / width - 0.5
-                    const y = (clientY - top) / height - 0.5
-
-                    const moveX = x * 20 // 20px max movement
-                    const moveY = y * 20
-
-                    frame.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`
-                  })
-
-                  section.addEventListener("mouseleave", () => {
-                    frame.style.transform = `translate3d(0, 0, 0)`
-                    frame.style.transition = "transform 0.5s ease-out"
-                  })
-
-                  section.addEventListener("mouseenter", () => {
-                    frame.style.transition = "none"
-                  })
-                })()
-              });
-            </script>
-          </div>
-        </div>
-        <section id="chogan-insta-cta" class="insta-luxury-section">
-          <div
-            class="home-thq-insta-background-container-elm2 insta-background-container"
-          ></div>
-          <div class="insta-content-wrapper">
-            <div class="insta-visual-frame">
-              <div class="frame-border top-left"></div>
-              <div class="frame-border bottom-right"></div>
-              <div class="insta-header-group">
-                <span class="sub-label">FOLLOW OUR JOURNEY</span>
-                <h2 class="insta-heading">Instagram</h2>
-                <div class="gold-divider"></div>
-              </div>
-              <p class="insta-description">
-                Experience the essence of luxury. Join our exclusive community
-                for daily inspirations, behind-the-scenes glimpses, and the
-                latest collections from ChoganLuxRS.
-              </p>
-              <div class="cta-container">
-                <a href="#">
-                  <div
-                    aria-label="Follow ChoganLuxRS on Instagram"
-                    class="insta-button"
-                  >
-                    <span class="btn-icon">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path
-                            d="M4 8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"
-                          ></path>
-                          <path
-                            d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0-6 0m7.5-4.5v.01"
-                          ></path>
-                        </g>
-                      </svg>
-                    </span>
-                    <span class="btn-text">@ChoganLuxRS</span>
-                    <div class="btn-shine"></div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div class="home-container21">
-          <div class="home-container22">
-            <script>
-              document.addEventListener('DOMContentLoaded', function() {
-                (function(){
-                  // Subtle parallax effect on mouse move for the frame
-                  const section = document.getElementById("chogan-insta-cta")
-                  const frame = section.querySelector(".insta-visual-frame")
-
-                  section.addEventListener("mousemove", (e) => {
-                    const { clientX, clientY } = e
-                    const { left, top, width, height } = section.getBoundingClientRect()
-
-                    const x = (clientX - left) / width - 0.5
-                    const y = (clientY - top) / height - 0.5
-
-                    const moveX = x * 20 // 20px max movement
-                    const moveY = y * 20
-
-                    frame.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`
-                  })
-
-                  section.addEventListener("mouseleave", () => {
-                    frame.style.transform = `translate3d(0, 0, 0)`
-                    frame.style.transition = "transform 0.5s ease-out"
-                  })
-
-                  section.addEventListener("mouseenter", () => {
-                    frame.style.transition = "none"
-                  })
-                })()
-              });
-            </script>
-          </div>
-        </div>
-        <div class="home-container23">
-          <div class="home-container24">
-            <script>
-              document.addEventListener('DOMContentLoaded', function() {
-                (function(){
-                  // Subtle entrance animation for cards
-                  const perfumeCards = [document.getElementById("card-1"), document.getElementById("card-2"), document.getElementById("card-3"), document.getElementById("card-4")]
-
-                  const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: "0px 0px -50px 0px",
-                  }
-
-                  const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry, index) => {
-                      if (entry.isIntersecting) {
-                        setTimeout(() => {
-                          entry.target.style.opacity = "1"
-                          entry.target.style.transform = "translateY(0)"
-                        }, index * 150)
-                        observer.unobserve(entry.target)
-                      }
-                    })
-                  }, observerOptions)
-
-                  perfumeCards.forEach((card) => {
-                    if (card) {
-                      card.style.opacity = "0"
-                      card.style.transform = "translateY(30px)"
-                      card.style.transition = "all 0.8s cubic-bezier(0.23, 1, 0.32, 1)"
-                      observer.observe(card)
-                    }
-                  })
-
-                  // Interactive hover effect for the header
-                  const header = document.querySelector(".grid-header")
-                  if (header) {
-                    header.addEventListener("mousemove", (e) => {
-                      const { clientX, clientY } = e
-                      const { left, top, width, height } = header.getBoundingClientRect()
-                      const x = (clientX - left) / width - 0.5
-                      const y = (clientY - top) / height - 0.5
-
-                      const title = header.querySelector(".section-title")
-                      if (title) {
-                        title.style.transform = `translate(${x * 10}px, ${y * 10}px)`
-                      }
-                    })
-
-                    header.addEventListener("mouseleave", () => {
-                      const title = header.querySelector(".section-title")
-                      if (title) {
-                        title.style.transform = `translate(0, 0)`
-                      }
-                    })
-                  }
-                })()
-              });
-            </script>
-          </div>
-        </div>
-        <section class="home-hero-container hero-container">
-          <div class="hero-bg-wrapper">
-            <video
-              autoplay="true"
-              muted="true"
-              loop="true"
-              playsinline="true"
-              poster="https://images.pexels.com/videos/6467870/pictures/preview-0.jpeg"
-              src="https://videos.pexels.com/video-files/6467870/6467870-hd_1080_2048_25fps.mp4"
-              class="home-hero-bg-image hero-bg-image"
-            ></video>
-            <div class="home-hero-overlay hero-overlay"></div>
-          </div>
-          <div class="home-content-wrapper content-wrapper">
-            <div class="home-side-branding side-branding">
-              <span class="home-side-text side-text">CHOGAN LUX RS</span>
-              <div class="line"></div>
-            </div>
-            <div class="text-block">
-              <span class="home-brand-eyebrow brand-eyebrow">
-                PREMIUM KOLEKCIJA
-              </span>
-              <h1 class="home-brand-title brand-title">
-                <span class="title-word">Ekskluzivni</span>
-                <span class="title-word accent">Parfemi</span>
-                <span class="title-word">ChoganLuxRS</span>
-              </h1>
-              <p class="home-brand-description brand-description">
-                Otkrijte svet luksuza i prefinjenosti kroz naše pažljivo birane
-                mirisne note.
-              </p>
-              <div class="cta-group">
-                <a href="#kolekcija">
-                  <div class="home-btn-gold btn-gold">
-                    <span>ISTRAŽITE KOLEKCIJU</span>
-                    <i class="btn-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M5 12h14m-7-7l7 7l-7 7"
-                        ></path>
-                      </svg>
-                    </i>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="home-scroll-indicator scroll-indicator">
-            <div class="home-mouse mouse">
-              <div class="home-wheel wheel"></div>
-            </div>
-            <span class="home-scroll-text scroll-text">SCROLL</span>
-          </div>
-        </section>
-        <section
-          id="kolekcija"
-          class="home-insta-luxury-section insta-luxury-section"
-        >
-          <div class="home-bg-texture bg-texture"></div>
-          <div class="home-insta-content-wrapper insta-content-wrapper">
-            <div class="home-insta-header-group insta-header-group">
-              <span class="home-sub-label sub-label">ODABRANO ZA VAS</span>
-              <h2 class="home-insta-heading insta-heading">Naša Kolekcija</h2>
-              <div class="home-gold-divider gold-divider"></div>
-            </div>
-            <div class="product-grid">
-              <div class="product-card">
-                <div class="home-insta-visual-frame insta-visual-frame">
-                  <img
-                    src="https://images.pexels.com/photos/7702669/pexels-photo-7702669.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    alt="Luxury Perfume"
-                    class="product-img"
-                  />
-                  <div class="home-frame-border frame-border"></div>
-                  <div class="home-bg-overlay bg-overlay"></div>
-                  <div class="card-actions">
-                    <button class="home-btn-shine btn-shine">DETALJI</button>
-                  </div>
-                </div>
-                <div class="home-product-info">
-                  <h3>Luxury Essence N°1</h3>
-                  <p class="product-type">Luksuzni Ekstrakt Parfema</p>
-                  <span class="home-price">Cena na upit</span>
-                </div>
-              </div>
-              <div class="product-card">
-                <div class="home-insta-visual-frame insta-visual-frame">
-                  <img
-                    src="https://images.pexels.com/photos/21008941/pexels-photo-21008941.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    alt="Luxury Perfume"
-                    class="product-img"
-                  />
-                  <div class="home-frame-border frame-border"></div>
-                  <div class="home-bg-overlay bg-overlay"></div>
-                  <div class="card-actions">
-                    <button class="home-btn-shine btn-shine">DETALJI</button>
-                  </div>
-                </div>
-                <div class="home-product-info">
-                  <h3>Golden Oud</h3>
-                  <p class="product-type">Luksuzni Ekstrakt Parfema</p>
-                  <span class="home-price">Cena na upit</span>
-                </div>
-              </div>
-              <div class="product-card">
-                <div class="home-insta-visual-frame insta-visual-frame">
-                  <img
-                    src="https://images.pexels.com/photos/14466493/pexels-photo-14466493.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    alt="Luxury Perfume"
-                    class="product-img"
-                  />
-                  <div class="home-frame-border frame-border"></div>
-                  <div class="home-bg-overlay bg-overlay"></div>
-                  <div class="card-actions">
-                    <button class="home-btn-shine btn-shine">DETALJI</button>
-                  </div>
-                </div>
-                <div class="home-product-info">
-                  <h3>Rose Imperial</h3>
-                  <p class="product-type">Luksuzni Ekstrakt Parfema</p>
-                  <span class="home-price">Cena na upit</span>
-                </div>
-              </div>
-              <div class="product-card">
-                <div class="home-insta-visual-frame insta-visual-frame">
-                  <img
-                    src="https://images.pexels.com/photos/33820366/pexels-photo-33820366.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    alt="Luxury Perfume"
-                    class="product-img"
-                  />
-                  <div class="home-frame-border frame-border"></div>
-                  <div class="home-bg-overlay bg-overlay"></div>
-                  <div class="card-actions">
-                    <button class="home-btn-shine btn-shine">DETALJI</button>
-                  </div>
-                </div>
-                <div class="home-product-info">
-                  <h3>Noir Mystique</h3>
-                  <p class="product-type">Luksuzni Ekstrakt Parfema</p>
-                  <span class="home-price">Cena na upit</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="insta-cta-section">
-          <div class="insta-background-container">
-            <div
-              class="home-gold-accent-circle home-circle-1 gold-accent-circle circle-1"
-            ></div>
-            <div
-              class="home-gold-accent-circle home-circle-2 gold-accent-circle circle-2"
-            ></div>
-          </div>
-          <div class="home-insta-content-wrapper insta-content-wrapper">
-            <div class="home-cta-container cta-container">
-              <div class="insta-icon-box">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                >
-                  <g
-                    fill="none"
-                    stroke="var(--gold-primary)"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                  >
-                    <rect
-                      width="20"
-                      height="20"
-                      x="2"
-                      y="2"
-                      rx="5"
-                      ry="5"
-                    ></rect>
-                    <path
-                      d="M16 11.37A4 4 0 1 1 12.63 8A4 4 0 0 1 16 11.37m1.5-4.87h.01"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-              <h2 class="home-insta-heading insta-heading">
-                Pratite Nas na Instagramu
-              </h2>
-              <p class="home-insta-description insta-description">
-                Budite u toku sa najnovijim mirisima i ekskluzivnim ponudama.
-              </p>
-              <a href="#">
-                <div class="home-insta-button insta-button">
-                  <span class="btn-text">@choganluxrs</span>
-                  <span class="btn-subtext">ZAPRATITE NAS</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </section>
-        <div class="home-container25">
-          <div class="home-container26">
+        <div class="home-container11">
+          <div class="home-container12">
             <style>
                       @keyframes scroll-wheel {0% {transform: translate(-50%, 0);
               opacity: 1;}
@@ -899,8 +69,8 @@
             </style>
           </div>
         </div>
-        <div class="home-container27">
-          <div class="home-container28">
+        <div class="home-container13">
+          <div class="home-container14">
             <script>
               document.addEventListener('DOMContentLoaded', function() {
                 (function(){
@@ -940,8 +110,8 @@
             </script>
           </div>
         </div>
-        <div class="home-container29">
-          <div class="home-container30">
+        <div class="home-container15">
+          <div class="home-container16">
             <style>
               body {
                 margin: 0;
@@ -957,18 +127,18 @@
         <section id="hero-section" class="home-hero-container1 hero-container">
           <div class="hero-bg-wrapper">
             <video
-              autoplay="true"
-              muted="true"
-              loop="true"
-              playsinline="true"
-              poster="https://images.pexels.com/videos/6810589/pictures/preview-0.jpg"
               src="https://videos.pexels.com/video-files/6810589/6810589-hd_1366_658_30fps.mp4"
-              class="home-hero-bg-image1 hero-bg-image"
+              loop="true"
+              muted="true"
+              poster="https://images.pexels.com/videos/6810589/pictures/preview-0.jpg"
+              autoplay="true"
+              playsinline="true"
+              class="hero-bg-image home-hero-bg-image1"
             ></video>
-            <div class="home-hero-overlay1 hero-overlay"></div>
+            <div class="hero-overlay home-hero-overlay1"></div>
           </div>
           <div class="home-side-branding1 side-branding">
-            <span class="home-side-text1 side-text">OLFAZETA LUXURY</span>
+            <span class="side-text home-side-text1">OLFAZETA LUXURY</span>
             <div class="line"></div>
           </div>
           <div class="home-content-wrapper1 content-wrapper">
@@ -976,22 +146,20 @@
               <span class="home-brand-eyebrow1 brand-eyebrow">
                 CHOGANLUXRS PREZENTUJE
               </span>
-              <h1 class="home-brand-title1 brand-title">
-                <span class="home-thq-title-word-elm7 accent">CHOGAN</span>
-                <span class="home-thq-title-word-elm8 accent">OLFAZETA</span>
-                <span class="home-thq-title-word-elm9 accent">PARFEMI</span>
+              <h1 class="brand-title home-brand-title1">
+                <span class="home-thq-title-word-elm1 accent">CHOGAN</span>
+                <span class="home-thq-title-word-elm2 accent">OLFAZETA</span>
+                <span class="home-thq-title-word-elm3 accent">PARFEMI</span>
               </h1>
-              <p class="home-brand-description1 brand-description">
+              <p class="brand-description home-brand-description1">
                 Luksuz koji miriše na uspeh. Otkrijte svet ekskluzivnih mirisa
                 inspirisanih najpoznatijim svetskim brendovima, kreiranih sa 30%
                 esencije za dugotrajnost koja fascinira.
               </p>
-              <div class="home-cta-group cta-group">
-                <a href="#kolekcija">
-                  <div class="home-btn-gold1 btn-gold">
-                    <span>ISTRAŽITE KOLEKCIJU</span>
-                  </div>
-                </a>
+              <div class="cta-group home-cta-group">
+                <div class="btn-gold home-btn-gold1">
+                  <span>ISTRAŽITE KOLEKCIJU</span>
+                </div>
                 <a
                   href="https://instagram.com/choganluxrs"
                   target="_blank"
@@ -1004,33 +172,33 @@
               </div>
             </div>
           </div>
-          <div class="home-scroll-indicator1 scroll-indicator">
-            <div class="home-mouse1 mouse">
-              <div class="home-wheel1 wheel"></div>
+          <div class="scroll-indicator home-scroll-indicator1">
+            <div class="mouse home-mouse1">
+              <div class="wheel home-wheel1"></div>
             </div>
-            <span class="home-scroll-text1 scroll-text">SCROLL</span>
+            <span class="scroll-text home-scroll-text1">SCROLL</span>
           </div>
         </section>
         <section
           id="about-section"
-          class="home-insta-luxury-section1 insta-luxury-section"
+          class="insta-luxury-section home-insta-luxury-section1"
         >
           <div class="home-bg-texture1 bg-texture"></div>
           <div class="home-insta-content-wrapper1 insta-content-wrapper">
             <div class="home-insta-visual-frame1 insta-visual-frame">
               <img
-                src="https://images.pexels.com/photos/14490637/pexels-photo-14490637.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
                 alt="Perfume Luxury"
+                src="https://images.pexels.com/photos/14490637/pexels-photo-14490637.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
                 class="frame-image"
               />
-              <div class="home-frame-border1 frame-border"></div>
+              <div class="frame-border home-frame-border1"></div>
               <div
-                class="home-gold-accent-circle1 gold-accent-circle circle-1"
+                class="home-gold-accent-circle1 circle-1 gold-accent-circle"
               ></div>
             </div>
             <div class="insta-header-group">
-              <span class="home-sub-label1 sub-label">O BRENDU</span>
-              <h2 class="home-insta-heading1 insta-heading">
+              <span class="sub-label home-sub-label1">O BRENDU</span>
+              <h2 class="insta-heading home-insta-heading1">
                 Vrhunski Kvalitet Bez Kompromisa
               </h2>
               <div class="home-gold-divider1 gold-divider"></div>
@@ -1045,18 +213,18 @@
                 <li>
                   <span class="icon-box">
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
                       width="24"
+                      xmlns="http://www.w3.org/2000/svg"
                       height="24"
                       viewBox="0 0 24 24"
                     >
                       <path
+                        d="M20 6L9 17l-5-5"
                         fill="none"
                         stroke="currentColor"
+                        stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M20 6L9 17l-5-5"
                       ></path>
                     </svg>
                   </span>
@@ -1065,18 +233,18 @@
                 <li>
                   <span class="icon-box">
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
                       width="24"
+                      xmlns="http://www.w3.org/2000/svg"
                       height="24"
                       viewBox="0 0 24 24"
                     >
                       <path
+                        d="M20 6L9 17l-5-5"
                         fill="none"
                         stroke="currentColor"
+                        stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M20 6L9 17l-5-5"
                       ></path>
                     </svg>
                   </span>
@@ -1085,18 +253,18 @@
                 <li>
                   <span class="icon-box">
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
                       width="24"
+                      xmlns="http://www.w3.org/2000/svg"
                       height="24"
                       viewBox="0 0 24 24"
                     >
                       <path
+                        d="M20 6L9 17l-5-5"
                         fill="none"
                         stroke="currentColor"
+                        stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M20 6L9 17l-5-5"
                       ></path>
                     </svg>
                   </span>
@@ -1106,155 +274,8 @@
             </div>
           </div>
         </section>
-        <section id="kolekcija" class="product-grid-section">
-          <div class="section-title-wrap">
-            <h2 class="grid-title">Ekskluzivna Kolekcija</h2>
-            <p class="grid-subtitle">Odaberite svoj potpisni miris</p>
-          </div>
-          <div class="grid-container">
-            <div class="home-perfume-card">
-              <div class="card-media">
-                <img
-                  src="https://images.pexels.com/photos/11265021/pexels-photo-11265021.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                  alt="Luxury Perfume"
-                />
-                <div class="home-card-overlay">
-                  <button class="quick-view">DETALJI</button>
-                </div>
-              </div>
-              <div class="card-info">
-                <span class="card-brand">OLFAZETA LUXURY</span>
-                <h3 class="card-name">Noir Intense</h3>
-                <p class="card-price">Na upit</p>
-                <a href="https://instagram.com/choganluxrs">
-                  <div class="btn-card"><span>PORUČI ODMAH</span></div>
-                </a>
-              </div>
-            </div>
-            <div class="home-perfume-card">
-              <div class="card-media">
-                <img
-                  src="https://images.pexels.com/photos/35152910/pexels-photo-35152910.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                  alt="Luxury Perfume"
-                />
-                <div class="home-card-overlay">
-                  <button class="quick-view">DETALJI</button>
-                </div>
-              </div>
-              <div class="card-info">
-                <span class="card-brand">OLFAZETA LUXURY</span>
-                <h3 class="card-name">Gold Essence</h3>
-                <p class="card-price">Na upit</p>
-                <a href="https://instagram.com/choganluxrs">
-                  <div class="btn-card"><span>PORUČI ODMAH</span></div>
-                </a>
-              </div>
-            </div>
-            <div class="home-perfume-card">
-              <div class="card-media">
-                <img
-                  src="https://images.pexels.com/photos/16239693/pexels-photo-16239693.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                  alt="Luxury Perfume"
-                />
-                <div class="home-card-overlay">
-                  <button class="quick-view">DETALJI</button>
-                </div>
-              </div>
-              <div class="card-info">
-                <span class="card-brand">OLFAZETA LUXURY</span>
-                <h3 class="card-name">Midnight Velvet</h3>
-                <p class="card-price">Na upit</p>
-                <a href="https://instagram.com/choganluxrs">
-                  <div class="btn-card"><span>PORUČI ODMAH</span></div>
-                </a>
-              </div>
-            </div>
-            <div class="home-perfume-card">
-              <div class="card-media">
-                <img
-                  src="https://images.pexels.com/photos/10924522/pexels-photo-10924522.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                  alt="Luxury Perfume"
-                />
-                <div class="home-card-overlay">
-                  <button class="quick-view">DETALJI</button>
-                </div>
-              </div>
-              <div class="card-info">
-                <span class="card-brand">OLFAZETA LUXURY</span>
-                <h3 class="card-name">Royal Oud</h3>
-                <p class="card-price">Na upit</p>
-                <a href="https://instagram.com/choganluxrs">
-                  <div class="btn-card"><span>PORUČI ODMAH</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="home-insta-cta-section">
-          <div class="cta-inner">
-            <div class="cta-content">
-              <div class="insta-icon-large">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                >
-                  <g
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                  >
-                    <rect
-                      width="20"
-                      height="20"
-                      x="2"
-                      y="2"
-                      rx="5"
-                      ry="5"
-                    ></rect>
-                    <path
-                      d="M16 11.37A4 4 0 1 1 12.63 8A4 4 0 0 1 16 11.37m1.5-4.87h.01"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-              <h2 class="cta-title">Budite deo naše luksuzne zajednice</h2>
-              <p class="cta-text">
-                Pratite nas za najnovije objave, recenzije kupaca i ekskluzivne
-                ponude.
-              </p>
-              <a
-                href="https://instagram.com/choganluxrs"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <div target="_blank" class="insta-button-premium">
-                  <span>@CHOGANLUXRS</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </section>
-        <footer class="minimal-footer">
-          <div class="footer-grid">
-            <div class="footer-brand">
-              <h3>CHOGANLUXRS</h3>
-              <p>Vaš partner u svetu vrhunskih mirisa.</p>
-            </div>
-            <div class="footer-contact">
-              <p>Kontakt: info@choganluxrs.rs</p>
-              <p>Srbija | Chogan Official Partner</p>
-            </div>
-            <div class="footer-legal">
-              <p>&amp;copy; 2024 ChoganLuxRS. Sva prava zadržana.</p>
-            </div>
-          </div>
-        </footer>
-        <div class="home-container31">
-          <div class="home-container32">
+        <div class="home-container17">
+          <div class="home-container18">
             <style>
                       @keyframes scrollWheel {0% {transform: translate(-50%, 0);
               opacity: 1;}
@@ -1263,8 +284,8 @@
             </style>
           </div>
         </div>
-        <div class="home-container33">
-          <div class="home-container34">
+        <div class="home-container19">
+          <div class="home-container20">
             <script>
               document.addEventListener('DOMContentLoaded', function() {
                 (function(){
@@ -1303,15 +324,360 @@
             </script>
           </div>
         </div>
-        <a href="https://play.teleporthq.io/signup" class="home-link23">
-          <div aria-label="Sign up to TeleportHQ" class="home-container35">
+        <section class="olfazeta-collection">
+          <div class="home-hero-bg-wrapper hero-bg-wrapper">
+            <video
+              autoplay="true"
+              muted="true"
+              loop="true"
+              playsinline="true"
+              src="https://videos.pexels.com/video-files/8516366/8516366-hd_1080_1920_30fps.mp4"
+              class="home-hero-bg-image2 hero-bg-image"
+            ></video>
+            <div class="home-hero-overlay2 hero-overlay"></div>
+            <div class="home-insta-content-wrapper2 insta-content-wrapper">
+              <div class="insta-header-group">
+                <span class="home-brand-eyebrow2 brand-eyebrow">
+                  CHOGAN LUXURY EXPERIENCE
+                </span>
+                <h1 class="home-brand-title2 brand-title">
+                  Olfazeta Collection
+                </h1>
+                <p class="home-brand-description2 brand-description">
+                  Otkrijte svet vrhunskih mirisnih nota inspirisanih
+                  najpoznatijim svetskim brendovima. Italijanska strast, luksuz
+                  bez kompromisa.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="collection-nav-sticky">
+            <div class="nav-inner">
+              <div class="search-container">
+                <div class="search-icon-box">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  id="perfumeSearch"
+                  placeholder="Pretraži parfeme..."
+                  class="search-input"
+                />
+              </div>
+              <div class="filter-scroll-wrapper">
+                <div id="filterGroup" class="filter-group">
+                  <button data-filter="Svi" class="filter-btn active">
+                    Svi
+                  </button>
+                  <button data-filter="Standardni Muški" class="filter-btn">
+                    Standardni Muški
+                  </button>
+                  <button data-filter="Standardni Ženski" class="filter-btn">
+                    Standardni Ženski
+                  </button>
+                  <button data-filter="Premium Muški" class="filter-btn">
+                    Premium Muški
+                  </button>
+                  <button data-filter="Premium Ženski" class="filter-btn">
+                    Premium Ženski
+                  </button>
+                  <button data-filter="Unisex" class="filter-btn">
+                    Unisex
+                  </button>
+                  <button data-filter="Luksuzni" class="filter-btn">
+                    Luksuzni
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="home-grid-container">
+            <div id="productGrid" class="home-product-grid"></div>
+            <div id="noResults" class="no-results hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--gold-primary)"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m15 9-6 6"></path>
+                <path d="m9 9 6 6"></path>
+              </svg>
+              <p>Nismo pronašli parfeme koji odgovaraju vašoj pretrazi.</p>
+            </div>
+          </div>
+          <div class="home-side-branding2 side-branding">
+            <span class="home-side-text2 side-text">OLFZETA BY CHOGAN</span>
+            <div class="line"></div>
+          </div>
+          <section class="home-insta-cta-section">
+            <div class="cta-inner">
+              <div class="cta-content">
+                <div class="insta-icon-large">
+                  <svg
+                    width="48"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="48"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect
+                        x="2"
+                        y="2"
+                        rx="5"
+                        ry="5"
+                        width="20"
+                        height="20"
+                      ></rect>
+                      <path
+                        d="M16 11.37A4 4 0 1 1 12.63 8A4 4 0 0 1 16 11.37m1.5-4.87h.01"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <h2 class="cta-title">Budite deo naše luksuzne zajednice</h2>
+                <p class="cta-text">
+                  Pratite nas za najnovije objave, recenzije kupaca i
+                  ekskluzivne ponude.
+                </p>
+                <a
+                  href="https://instagram.com/choganluxrs"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <div target="_blank" class="insta-button-premium">
+                    <span>@CHOGANLUXRS</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+        </section>
+        <footer class="minimal-footer">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <h3>CHOGANLUXRS</h3>
+              <p>Vaš partner u svetu vrhunskih mirisa.</p>
+            </div>
+            <div class="footer-contact">
+              <p>Kontakt: info@choganluxrs.rs</p>
+              <p>Srbija | Chogan Official Partner</p>
+            </div>
+            <div class="footer-legal">
+              <p>&amp;copy; 2024 ChoganLuxRS. Sva prava zadržana.</p>
+            </div>
+          </div>
+        </footer>
+        <div class="home-container21">
+          <div class="home-container22">
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                (function(){
+                  const perfumes = [
+                    { id: 1, name: "Olfazeta Luxury 101", cat: "Luksuzni", img: "https://images.pexels.com/photos/33820350/pexels-photo-33820350.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                    { id: 2, name: "Intense Gold", cat: "Premium Muški", img: "https://images.pexels.com/photos/7702669/pexels-photo-7702669.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                    { id: 3, name: "Rose Velvet", cat: "Premium Ženski", img: "https://images.pexels.com/photos/14466493/pexels-photo-14466493.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                    { id: 4, name: "Classic Noir", cat: "Standardni Muški", img: "https://images.pexels.com/photos/35488878/pexels-photo-35488878.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                    { id: 5, name: "Aura Blanc", cat: "Standardni Ženski", img: "https://images.pexels.com/photos/12402366/pexels-photo-12402366.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                    { id: 6, name: "Azure Mist", cat: "Unisex", img: "https://images.pexels.com/photos/14466498/pexels-photo-14466498.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                    { id: 7, name: "Royal Oud", cat: "Luksuzni", img: "https://images.pexels.com/photos/21008941/pexels-photo-21008941.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                    { id: 8, name: "Silk Path", cat: "Premium Ženski", img: "https://images.pexels.com/photos/14466495/pexels-photo-14466495.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                  ]
+
+                  // Generate more items for the 200+ demo
+                  const fullList = []
+                  for (let i = 0; i < 200; i++) {
+                    const template = perfumes[i % perfumes.length]
+                    fullList.push({
+                      ...template,
+                      id: i + 1,
+                      name: `${template.name} Vol.${Math.floor(i / 8) + 1}`,
+                    })
+                  }
+
+                  const grid = document.getElementById("productGrid")
+                  const searchInput = document.getElementById("perfumeSearch")
+                  const filterBtns = document.querySelectorAll(".filter-btn")
+                  const noResults = document.getElementById("noResults")
+
+                  let currentFilter = "Svi"
+                  let searchTerm = ""
+
+                  function renderProducts() {
+                    const filtered = fullList.filter((p) => {
+                      const matchesFilter = currentFilter === "Svi" || p.cat === currentFilter
+                      const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase())
+                      return matchesFilter && matchesSearch
+                    })
+
+                    grid.innerHTML = filtered
+                      .map(
+                        (p) => `
+                        <div class="product-card">
+                            <div class="card-image-box">
+                                <span class="card-badge">${p.cat}</span>
+                                <img src="${p.img}" alt="${p.name}" loading="lazy">
+                            </div>
+                            <div class="card-content">
+                                <span class="brand-name">Olfazeta</span>
+                                <h3 class="product-title">${p.name}</h3>
+                                <p class="product-price">Cena na upit</p>
+                                <button class="btn-detail">
+                                    Detaljnije
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    `
+                      )
+                      .join("")
+
+                    noResults.classList.toggle("hidden", filtered.length > 0)
+                  }
+
+                  searchInput.addEventListener("input", (e) => {
+                    searchTerm = e.target.value
+                    renderProducts()
+                  })
+
+                  filterBtns.forEach((btn) => {
+                    btn.addEventListener("click", () => {
+                      filterBtns.forEach((b) => b.classList.remove("active"))
+                      btn.classList.add("active")
+                      currentFilter = btn.getAttribute("data-filter")
+                      renderProducts()
+                    })
+                  })
+
+                  // Initial Render
+                  renderProducts()
+                })()
+              });
+            </script>
+          </div>
+        </div>
+        <div class="home-container23">
+          <div class="home-container24">
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                (function(){
+                  const perfumes = [
+                    { id: 1, name: "Olfazeta Luxury 101", cat: "Luksuzni", img: "https://images.pexels.com/photos/33820350/pexels-photo-33820350.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                    { id: 2, name: "Intense Gold", cat: "Premium Muški", img: "https://images.pexels.com/photos/7702669/pexels-photo-7702669.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                    { id: 3, name: "Rose Velvet", cat: "Premium Ženski", img: "https://images.pexels.com/photos/14466493/pexels-photo-14466493.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                    { id: 4, name: "Classic Noir", cat: "Standardni Muški", img: "https://images.pexels.com/photos/35488878/pexels-photo-35488878.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                    { id: 5, name: "Aura Blanc", cat: "Standardni Ženski", img: "https://images.pexels.com/photos/12402366/pexels-photo-12402366.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                    { id: 6, name: "Azure Mist", cat: "Unisex", img: "https://images.pexels.com/photos/14466498/pexels-photo-14466498.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                    { id: 7, name: "Royal Oud", cat: "Luksuzni", img: "https://images.pexels.com/photos/21008941/pexels-photo-21008941.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                    { id: 8, name: "Silk Path", cat: "Premium Ženski", img: "https://images.pexels.com/photos/14466495/pexels-photo-14466495.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+                  ]
+
+                  // Generate more items for the 200+ demo
+                  const fullList = []
+                  for (let i = 0; i < 200; i++) {
+                    const template = perfumes[i % perfumes.length]
+                    fullList.push({
+                      ...template,
+                      id: i + 1,
+                      name: `${template.name} Vol.${Math.floor(i / 8) + 1}`,
+                    })
+                  }
+
+                  const grid = document.getElementById("productGrid")
+                  const searchInput = document.getElementById("perfumeSearch")
+                  const filterBtns = document.querySelectorAll(".filter-btn")
+                  const noResults = document.getElementById("noResults")
+
+                  let currentFilter = "Svi"
+                  let searchTerm = ""
+
+                  function renderProducts() {
+                    const filtered = fullList.filter((p) => {
+                      const matchesFilter = currentFilter === "Svi" || p.cat === currentFilter
+                      const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase())
+                      return matchesFilter && matchesSearch
+                    })
+
+                    grid.innerHTML = filtered
+                      .map(
+                        (p) => `
+                        <div class="product-card">
+                            <div class="card-image-box">
+                                <span class="card-badge">${p.cat}</span>
+                                <img src="${p.img}" alt="${p.name}" loading="lazy">
+                            </div>
+                            <div class="card-content">
+                                <span class="brand-name">Olfazeta</span>
+                                <h3 class="product-title">${p.name}</h3>
+                                <p class="product-price">Cena na upit</p>
+                                <button class="btn-detail">
+                                    Detaljnije
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    `
+                      )
+                      .join("")
+
+                    noResults.classList.toggle("hidden", filtered.length > 0)
+                  }
+
+                  searchInput.addEventListener("input", (e) => {
+                    searchTerm = e.target.value
+                    renderProducts()
+                  })
+
+                  filterBtns.forEach((btn) => {
+                    btn.addEventListener("click", () => {
+                      filterBtns.forEach((b) => b.classList.remove("active"))
+                      btn.classList.add("active")
+                      currentFilter = btn.getAttribute("data-filter")
+                      renderProducts()
+                    })
+                  })
+
+                  // Initial Render
+                  renderProducts()
+                })()
+              });
+            </script>
+          </div>
+        </div>
+        <a href="https://play.teleporthq.io/signup" class="home-link3">
+          <div aria-label="Sign up to TeleportHQ" class="home-container25">
             <svg
               width="24"
               height="24"
               viewBox="0 0 19 21"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class="home-icon56"
+              class="home-icon27"
             >
               <path
                 d="M9.1017 4.64355H2.17867C0.711684 4.64355 -0.477539 5.79975 -0.477539 7.22599V13.9567C-0.477539 15.3829 0.711684 16.5391 2.17867 16.5391H9.1017C10.5687 16.5391 11.7579 15.3829 11.7579 13.9567V7.22599C11.7579 5.79975 10.5687 4.64355 9.1017 4.64355Z"
@@ -1326,7 +692,7 @@
                 fill="#2874DE"
               ></path>
             </svg>
-            <span class="home-text36">Built in TeleportHQ</span>
+            <span class="home-text22">Built in TeleportHQ</span>
           </div>
         </a>
       </div>
