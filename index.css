@@ -1,4 +1,4 @@
-.home-container1 {
+.home-container10 {
   width: 100%;
   display: flex;
   min-height: 100vh;
@@ -6,35 +6,139 @@
   flex-direction: column;
 }
  
-.home-container2 {
+.home-thq-bg-overlay-elm1 {
+  height: 1176px;
+}
+ 
+.home-container11 {
   display: none;
 }
  
-.home-container3 {
+.home-container12 {
   display: contents;
 }
  
-.home-container4 {
+.home-thq-title-word-elm1 {
+  display: inline-block;
+}
+ 
+.home-thq-title-word-elm2 {
+  display: inline-block;
+}
+ 
+.home-thq-title-word-elm3 {
+  display: inline-block;
+}
+ 
+.home-container13 {
   display: none;
 }
  
-.home-container5 {
+.home-container14 {
   display: contents;
 }
  
-.home-container6 {
+.home-container15 {
   display: none;
 }
  
-.home-container7 {
+.home-container16 {
   display: contents;
 }
  
-.home-link4 {
+.home-container17 {
+  display: none;
+}
+ 
+.home-container18 {
   display: contents;
 }
  
-.home-container8 {
+.home-container19 {
+  display: none;
+}
+ 
+.home-container20 {
+  display: contents;
+}
+ 
+.home-thq-insta-background-container-elm2 {
+  border: 2px dashed rgba(120, 120, 120, 0.4);
+}
+ 
+.home-container21 {
+  display: none;
+}
+ 
+.home-container22 {
+  display: contents;
+}
+ 
+.home-container23 {
+  display: none;
+}
+ 
+.home-container24 {
+  display: contents;
+}
+ 
+.home-container25 {
+  display: none;
+}
+ 
+.home-container26 {
+  display: contents;
+}
+ 
+.home-container27 {
+  display: none;
+}
+ 
+.home-container28 {
+  display: contents;
+}
+ 
+.home-container29 {
+  display: none;
+}
+ 
+.home-container30 {
+  display: contents;
+}
+ 
+.home-thq-title-word-elm7 {
+  display: block;
+}
+ 
+.home-thq-title-word-elm8 {
+  display: block;
+}
+ 
+.home-thq-title-word-elm9 {
+  display: block;
+}
+ 
+.home-container31 {
+  display: none;
+}
+ 
+.home-container32 {
+  display: contents;
+}
+ 
+.home-container33 {
+  display: none;
+}
+ 
+.home-container34 {
+  display: contents;
+}
+ 
+.home-link23 {
+  display: contents;
+}
+ 
+.home-container35 {
   right: 50px;
   border: 1px solid #ffffff5c;
   bottom: 30px;
@@ -53,12 +157,12 @@
   background-color: rgba(41, 41, 41, 0.41);
 }
  
-.home-icon22 {
+.home-icon56 {
   width: 24px;
   margin-right: 4px;
 }
  
-.home-text {
+.home-text36 {
   color: white;
   font-size: 13px;
   font-style: normal;
