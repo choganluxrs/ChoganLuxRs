@@ -499,25 +499,29 @@
               document.addEventListener('DOMContentLoaded', function() {
                 (function(){
                   const perfumes = [
-                    { id: 1, name: "Olfazeta Luxury 101", cat: "Luksuzni", img: "https://images.pexels.com/photos/33820350/pexels-photo-33820350.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
-                    { id: 2, name: "Intense Gold", cat: "Premium Muški", img: "https://images.pexels.com/photos/7702669/pexels-photo-7702669.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
-                    { id: 3, name: "Rose Velvet", cat: "Premium Ženski", img: "https://images.pexels.com/photos/14466493/pexels-photo-14466493.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
-                    { id: 4, name: "Classic Noir", cat: "Standardni Muški", img: "https://images.pexels.com/photos/35488878/pexels-photo-35488878.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
-                    { id: 5, name: "Aura Blanc", cat: "Standardni Ženski", img: "https://images.pexels.com/photos/12402366/pexels-photo-12402366.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
-                    { id: 6, name: "Azure Mist", cat: "Unisex", img: "https://images.pexels.com/photos/14466498/pexels-photo-14466498.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
-                    { id: 7, name: "Royal Oud", cat: "Luksuzni", img: "https://images.pexels.com/photos/21008941/pexels-photo-21008941.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
-                    { id: 8, name: "Silk Path", cat: "Premium Ženski", img: "https://images.pexels.com/photos/14466495/pexels-photo-14466495.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
-                  ]
-
-                  // Generate more items for the 200+ demo
-                  const fullList = []
-                  for (let i = 0; i < 200; i++) {
-                    const template = perfumes[i % perfumes.length]
-                    fullList.push({
-                      ...template,
-                      id: i + 1,
-                      name: `${template.name} Vol.${Math.floor(i / 8) + 1}`,
-                    })
+  {
+    id: 1,
+    name: "Chogan Parfem 001",
+    cat: "Muški",
+    price: "4.190 RSD",
+    img: "https://example.com/slika001.jpg"
+  },
+  {
+    id: 2,
+    name: "Chogan Parfem 003",
+    cat: "Ženski",
+    price: "4.190 RSD",
+    img: "https://example.com/slika003.jpg"
+  },
+  {
+    id: 3,
+    name: "Chogan Parfem 007",
+    cat: "Unisex",
+    price: "4.190 RSD",
+    img: "https://example.com/slika007.jpg"
+  },
+  // dodaj sve parfeme koje imaš
+];
                   }
 
                   const grid = document.getElementById("productGrid")
