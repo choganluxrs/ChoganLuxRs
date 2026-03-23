@@ -1262,7 +1262,391 @@
                 display: block;
             }
         }
-    </style>
+    
+/* SHOPPING CART STYLES */
+.cart-icon {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 5px 20px rgba(212,175,55,0.4);
+    transition: var(--transition);
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(212,175,55,0.6);
+}
+
+.cart-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--black-deep);
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--black-deep);
+    color: var(--gold-primary);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 2px solid var(--gold-primary);
+}
+
+/* CART SIDEBAR */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    max-width: 100%;
+    height: 100vh;
+    background: var(--black-soft);
+    z-index: 2000;
+    transition: right 0.4s ease;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.cart-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart-header {
+    padding: 25px 30px;
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--black-card);
+}
+
+.cart-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold-primary);
+    margin: 0;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.close-cart:hover {
+    background: rgba(212,175,55,0.1);
+    color: var(--gold-primary);
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 30px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 15px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    background: var(--black-card);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.cart-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--white);
+}
+
+.cart-item-size {
+    color: var(--gold-primary);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.cart-item-price {
+    color: var(--gray-light);
+    font-size: 0.9rem;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.qty-btn {
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(212,175,55,0.3);
+    background: transparent;
+    color: var(--gold-primary);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.qty-btn:hover {
+    background: var(--gold-primary);
+    color: var(--black-deep);
+}
+
+.cart-item-qty {
+    font-weight: 600;
+    min-width: 20px;
+    text-align: center;
+}
+
+.remove-item {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: var(--gray-light);
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: var(--transition);
+}
+
+.remove-item:hover {
+    color: #ff4444;
+}
+
+.cart-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gray-light);
+}
+
+.cart-empty svg {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.cart-footer {
+    padding: 25px 30px;
+    border-top: 1px solid rgba(212,175,55,0.2);
+    background: var(--black-card);
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.cart-total span:first-child {
+    color: var(--gray-light);
+}
+
+.cart-total span:last-child {
+    font-weight: 700;
+    color: var(--gold-primary);
+    font-size: 1.4rem;
+}
+
+.btn-checkout {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+    border: none;
+    color: var(--black-deep);
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-checkout:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+}
+
+/* PRODUCT NOTES */
+.product-notes {
+    background: rgba(212,175,55,0.05);
+    border-left: 3px solid var(--gold-primary);
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+}
+
+.product-notes strong {
+    color: var(--gold-primary);
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* SIZE SELECTION */
+.size-selection {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.size-option {
+    padding: 8px 16px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    color: var(--white);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.85rem;
+}
+
+.size-option:hover {
+    border-color: var(--gold-primary);
+    color: var(--gold-primary);
+}
+
+.size-option.selected {
+    background: var(--gold-primary);
+    border-color: var(--gold-primary);
+    color: var(--black-deep);
+    font-weight: 600;
+}
+
+.size-option:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* ADD TO CART BUTTON */
+.btn-add-cart {
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    border: 2px solid var(--gold-primary);
+    color: var(--gold-primary);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transition);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.btn-add-cart:hover:not(:disabled) {
+    background: var(--gold-primary);
+    color: var(--black-deep);
+}
+
+.btn-add-cart:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-add-cart.added {
+    background: #22c55e;
+    border-color: #22c55e;
+    color: white;
+}
+
+/* RESPONSIVE CART */
+@media (max-width: 600px) {
+    .cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+
+    .cart-icon {
+        top: 15px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+</style>
 <base target="_blank">
 </head>
 <body>
@@ -2054,124 +2438,461 @@
         }
 
         // Render Products
-        function renderProducts() {
-            const filtered = perfumes.filter(p => {
-                const matchesFilter = currentFilter === 'Svi' || p.category === currentFilter;
-                const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                                    p.inspiration.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                    p.id.toString().includes(searchTerm);
-                return matchesFilter && matchesSearch;
-            });
+function renderProducts() {
+    const filtered = perfumes.filter(p => {
+        const matchesFilter = currentFilter === 'Svi' || p.category === currentFilter;
+        const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                            p.inspiration.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                            p.id.toString().includes(searchTerm);
+        return matchesFilter && matchesSearch;
+    });
 
-            grid.innerHTML = filtered.map(p => {
-                // Odredi sliku
-                let image;
-                if (p.category === 'Event' && p.slika) {
-                    image = baseUrl + p.slika;
-                } else if (p.category === 'Luksuzni' && p.boja) {
-                    const bojaFiles = {
-                        'Crna': 'Crni.png',
-                        'Bela': 'Beli.png',
-                        'Zlatna': 'Zlatni.png',
-                        'Plava': 'Plavi.png',
-                        'Crvena': 'Crveni.png'
-                    };
-                    image = baseUrl + bojaFiles[p.boja];
-                } else if (p.category === 'Muški' || p.category === 'Muški Premium' || p.category === 'Unisex') {
-                    image = baseUrl + 'Muski%20parfem.png';
-                } else {
-                    image = baseUrl + 'Zenski%20parfem.png';
-                }
-                
-                const priceDisplay = formatPrice(p);
-                const bojaBadge = (p.category === 'Luksuzni' && p.boja) ? renderBojaBadge(p.boja) : '';
-                const refillTag = p.hasRefill ? '<span class="size-tag refill">15ml dopuna - cena na upit</span>' : '';
-                
-                return `
-                    <div class="product-card">
-                        <div class="product-image" style="height: 250px;">
-                            <span class="product-badge">${p.category}</span>
-                            <img src="${image}" alt="${p.name}" loading="lazy" style="object-fit: contain; padding: 20px; max-height: 100%; width: auto; margin: 0 auto;" onerror="this.src='${baseUrl}Zenski%20parfem.png'">
-                        </div>
-                        <div class="product-info">
-                            <span class="product-number">Br. ${p.id}</span>
-                            <h3 class="product-name">${p.name}</h3>
-                            <p class="product-inspiration">Inspiriran: ${p.inspiration}</p>
-                            ${bojaBadge}
-                            <div class="product-sizes">
-                                ${p.price30 ? '<span class="size-tag">30ml</span>' : ''}
-                                ${p.price70 ? '<span class="size-tag">70ml</span>' : ''}
-                                ${p.price50 ? '<span class="size-tag">50ml</span>' : ''}
-                                ${refillTag}
-                            </div>
-                            <p class="product-price">${priceDisplay}</p>
-                            <button class="btn-order" onclick="orderProduct('${p.name}', '${p.inspiration}', '${priceDisplay}', '${p.boja || ''}')">
-                                Poruči via WhatsApp
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                            </button>
-                        </div>
+    grid.innerHTML = filtered.map(p => {
+        // Odredi sliku
+        let image;
+        let category = p.category;
+        if (p.category === 'Event' && p.slika) {
+            image = baseUrl + p.slika;
+        } else if (p.category === 'Luksuzni' && p.boja) {
+            const bojaFiles = {
+                'Crna': 'Crni.png',
+                'Bela': 'Beli.png',
+                'Zlatna': 'Zlatni.png',
+                'Plava': 'Plavi.png',
+                'Crvena': 'Crveni.png'
+            };
+            image = baseUrl + bojaFiles[p.boja];
+        } else if (p.category === 'Muški' || p.category === 'Muški Premium' || p.category === 'Unisex') {
+            image = baseUrl + 'Muski%20parfem.png';
+        } else {
+            image = baseUrl + 'Zenski%20parfem.png';
+        }
+
+        const notes = getPerfumeNotes(p.inspiration);
+        const bojaBadge = (p.category === 'Luksuzni' && p.boja) ? renderBojaBadge(p.boja) : '';
+
+        // Generiši opcije veličina
+        let sizeOptions = '';
+        if (p.price30) {
+            sizeOptions += `<button class="size-option" onclick="selectSize('${p.id}', '30ml', '${p.price30}', this)">30ml - ${p.price30}</button>`;
+        }
+        if (p.price70) {
+            sizeOptions += `<button class="size-option" onclick="selectSize('${p.id}', '70ml', '${p.price70}', this)">70ml - ${p.price70}</button>`;
+        }
+        if (p.price50) {
+            sizeOptions += `<button class="size-option" onclick="selectSize('${p.id}', '50ml', '${p.price50}', this)">50ml - ${p.price50}</button>`;
+        }
+
+        return `
+            <div class="product-card">
+                <div class="product-image" style="height: 250px;">
+                    <span class="product-badge">${p.category}</span>
+                    <img src="${image}" alt="${p.name}" loading="lazy" style="object-fit: contain; padding: 20px; max-height: 100%; width: auto; margin: 0 auto;" onerror="this.src='${baseUrl}Zenski%20parfem.png'">
+                </div>
+                <div class="product-info">
+                    <span class="product-number">Br. ${p.id}</span>
+                    <h3 class="product-name">${p.name}</h3>
+                    <p class="product-inspiration">Inspiriran: ${p.inspiration}</p>
+                    ${bojaBadge}
+
+                    <div class="product-notes">
+                        <strong>Mirisne note:</strong>
+                        ${notes}
                     </div>
-                `;
-            }).join('');
 
-            noResults.classList.toggle('show', filtered.length === 0);
-            
-            // Animate cards
+                    <div class="size-selection">
+                        ${sizeOptions}
+                    </div>
+
+                    <button class="btn-add-cart" data-perfume-id="${p.id}" onclick="addToCartFromCard('${p.id}', '${p.name}', '${p.inspiration}', '${category}')" disabled>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        Dodaj u korpu
+                    </button>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    noResults.classList.toggle('show', filtered.length === 0);
+
+    // Animate cards
+    setTimeout(() => {
+        document.querySelectorAll('.product-card').forEach((card, index) => {
             setTimeout(() => {
-                document.querySelectorAll('.product-card').forEach((card, index) => {
-                    setTimeout(() => {
-                        card.classList.add('visible');
-                    }, index * 50);
-                });
-            }, 50);
-        }
-
-        // Order Product via WhatsApp
-        function orderProduct(name, inspiration, price, boja) {
-            let bojaIzbor = '';
-            
-            // Ako ima boju (luksuzni), dodaj u poruku
-            if (boja && boja !== '') {
-                bojaIzbor = `\n\n*Boja bočice: ${boja}*`;
-            }
-            
-            const message = `Zdravo! Želim da poručim:\n\n*${name}*\nInspiriran: ${inspiration}\n${price}${bojaIzbor}\n\nMolim vas za informacije o dostupnosti i načinu plaćanja. Hvala!`;
-            
-            const whatsappUrl = `https://wa.me/381605415570?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        }
-
-        // Event Listeners
-        searchInput.addEventListener('input', (e) => {
-            searchTerm = e.target.value;
-            renderProducts();
+                card.classList.add('visible');
+            }, index * 50);
         });
+    }, 50);
+}
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                currentFilter = btn.getAttribute('data-filter');
-                renderProducts();
-            });
-        });
-
-        // Parallax Hero
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroVideo = document.querySelector('.hero-video');
-            if (heroVideo && scrolled < window.innerHeight) {
-                heroVideo.style.transform = `translateY(${scrolled * 0.5}px) scale(1.1)`;
-            }
-        });
-
-        // Initial Render
+// Initial Render
         renderProducts();
 
         // Mobile Menu
         function toggleMenu() {
             alert('Za mobilni meni, dodajte hamburger meni po potrebi!');
         }
+
+
+// PERFUME NOTES DATABASE
+const perfumeNotes = {"Opium": "Orijenatalne, začinske note. Top: mandarina, bergamot | Srce: karanfil, jasmin, ruža | Baza: vanila, pačuli, amber",
+    "J'adore": "Cvetno-voćne note. Top: bergamot, kruška, dinja | Srce: jasmin, ruža, tuberoza | Baza: vanila, mošus, cedar",
+    "Alien": "Amber-cvetne note. Top: jasmin | Srce: drvene note, amber | Baza: vanila, beli mošus",
+    "Light Blue": "Sveže-cvetne note. Top: limun, jabuka, zvonek | Srce: bambus, jasmin, bela ruža | Baza: cedar, amber, mošus",
+    "Manifesto": "Orijenatalno-cvetne note. Top: crni ribizla, bergamot | Srce: jasmin, tuberoza | Baza: vanila, tonka, cedar",
+    "Lady Million": "Cvetno-živahne note. Top: malina, neroli, limun | Srce: jasmin, cvet narandže, gardenija | Baza: med, pačuli, amber",
+    "Hypnotic Poison": "Orijenatalno-gurmanske note. Top: kokos, šljiva, biljke | Srce: jasmin, tuberoza, ruža | Baza: vanila, badem, mošus",
+    "No°5": "Aldehidno-cvetne note. Top: aldehidi, neroli, jasmin | Srce: ruža, jasmin, ilang-ilang | Baza: vanila, vetiver, sandalovina",
+    "For Her": "Cvetno-mošusne note. Top: ruža, mošus | Srce: jasmin, ruža | Baza: mošus, amber, pačuli",
+    "Flower": "Cvetno-puderaste note. Top: divlja ruža, crvene bobice | Srce: ruža, jasmin, jorgovan | Baza: vanila, mošus, amber",
+    "Trésor": "Cvetno-voćne note. Top: breskva, ananas, bergamot | Srce: ruža, jasmin, heliotrop | Baza: vanila, mošus, sandalovina",
+    "Angel": "Orijenatalno-gurmanske note. Top: koka-kola, krem, med | Srce: crvene bobice, voće | Baza: vanila, pačuli, mošus",
+    "L'Eau d'Issey": "Vodeno-cvetne note. Top: lotos, melun, limun | Srce: jasmin, ljiljan, ruža | Baza: mošus, drvene note, ambra",
+    "Chance": "Cvetno-živahne note. Top: ananas, ruža, jasmin | Srce: jasmin, ruža, jorgovan | Baza: vanila, mošus, pačuli",
+    "Miss Dior": "Cvetno-živahne note. Top: mandarina, ruža, jasmin | Srce: ruža, jasmin, jorgovan | Baza: mošus, pačuli, amber",
+    "Hypnôse": "Orijenatalno-cvetne note. Top: pasiflora, cvet narandže | Srce: jasmin, gardenija | Baza: vanila, vetiver, pačuli",
+    "La Vie Est Belle": "Gurmansko-cvetne note. Top: crna ribizla, kruška | Srce: iris, jasmin, ruža | Baza: praline, vanila, pačuli",
+    "Crystal Noir": "Orijenatalno-cvetne note. Top: začini, gardenija, afrički narandžin cvet | Srce: gardenija, jasmin, ruža | Baza: sandalovina, amber, mošus",
+    "Dolce": "Cvetno-voćne note. Top: neroli, papaja, amaryllis | Srce: vodeni ljiljan, narcis, ruža | Baza: mošus, kašmir",
+    "Coco Mademoiselle": "Orijenatalno-cvetne note. Top: narandža, bergamot, grejpfrut | Srce: ruža, jasmin, jorgovan | Baza: pačuli, vetiver, vanila",
+    "Narciso": "Cvetno-puderaste note. Top: ruža, breskva | Srce: mošus, jasmin | Baza: vetiver, cedar, amber",
+    "Black Opium": "Gurmansko-cvetne note. Top: ruža, ružičasti biber | Srce: kafa, jasmin, slatki badem | Baza: vanila, pačuli, cedar",
+    "Ange ou Démon": "Orijenatalno-cvetne note. Top: beli luk, mandarina, safran | Srce: jasmin, gardenija, jorgovan | Baza: tonka, vanila, drvene note",
+    "Omnia Amethyste": "Drveno-cvetne note. Top: ružičasti grejpfrut, limun | Srce: iris, ruža, heliotrop | Baza: solarne note, mošus, drvene note",
+    "Omnia Indian Garnet": "Orijenatalno-cvetne note. Top: mandarina, osmantus | Srce: tuberoza, jasmin | Baza: amber, drvene note",
+    "Olympéa": "Orijenatalno-cvetne note. Top: zelena mandarina, ružičasti biber | Srce: jasmin, ruža, cvet narandže | Baza: vanila, amber, sandalovina",
+    "The One": "Drveno-začinske note. Top: grejpfrut, koriander, bosiljak | Srce: đumbir, kardamon, cvet narandže | Baza: amber, cedar, mošus",
+    "Allure": "Cvetno-živahne note. Top: mandarina, bergamot, pasiflora | Srce: jasmin, ruža, jorgovan | Baza: vanila, vetiver, amber",
+    "Acqua di Gioia": "Sveže-cvetne note. Top: limun, menta, ružičasti biber | Srce: jasmin, ruža, peoni | Baza: cedar, žuti šafran, šećer",
+    "Si": "Cvetno-voćne note. Top: crna ribizla, mandarina, bergamot | Srce: ruža, jasmin, pačuli | Baza: vanila, mošus, drvene note",
+    "Classique": "Orijenatalno-cvetne note. Top: ruža, ružičasti biber | Srce: jasmin, jorgovan, orchideja | Baza: vanila, amber, mošus",
+    "Signorina": "Cvetno-voćne note. Top: crvene bobice, zelene note | Srce: jasmin, ruža, peoni | Baza: mošus, sandalovina, vanila",
+    "Mon Paris": "Cvetno-voćne note. Top: jagoda, malina, kruška | Srce: jasmin, ruža, cvet narandže | Baza: pačuli, cedar, mošus",
+    "Poison Girl": "Gurmansko-cvetne note. Top: gorčina narandže, limun | Srce: ruža, jasmin, narandžin cvet | Baza: tonka, vanila, badem, sandalovina",
+    "Gabrielle": "Cvetno-svetle note. Top: grejpfrut, mandarina | Srce: jasmin, ruža, ilang-ilang, tuberoza | Baza: mošus, sandalovina, oris",
+    "Amo Ferragamo": "Orijenatalno-cvetne note. Top: crna ribizla, rodiola | Srce: jasmin, ruža, jorgovan | Baza: vanila, tonka, sandalovina",
+    "Joy": "Cvetno-drvene note. Top: bergamot, mandarina | Srce: jasmin, ruža, cvet narandže | Baza: cedar, sandalovina, mošus",
+    "Yes I Am": "Cvetno-gurmanske note. Top: malina, mandarina, bergamot | Srce: jasmin, ruža, gardenija | Baza: karamel, mošus, sandalovina",
+    "Scandal": "Medeno-cvetne note. Top: krvna narandža, mandarina | Srce: med, gardenija, jasmin | Baza: karamel, pačuli, vetiver",
+    "La Petite Robe Noire": "Gurmansko-cvetne note. Top: trešnja, mandarina, bergamot | Srce: ruža, jasmin, čaj | Baza: vanila, pačuli, mošus",
+    "L'Interdit": "Cvetno-drvne note. Top: kruška, bergamot | Srce: tuberoza, jasmin, ruža | Baza: pačuli, vetiver, vanila",
+    "Paradox": "Cvetno-drvne note. Top: jasmin, ruža | Srce: pačuli, mošus | Baza: vanila, amber, drvene note",
+    "Devotion": "Cvetno-gurmanske note. Top: limun, bergamot | Srce: jasmin, ruža | Baza: vanila, karamel, mošus",
+    "Goddess": "Cvetno-drvne note. Top: limun, bergamot | Srce: jasmin, ruža | Baza: mošus, vanila, cedar",
+    "Guilty": "Cvetno-orientalne note. Top: mandarina, ružičasti biber | Srce: jasmin, geranijum, ruža | Baza: pačuli, amber, vanila",
+    "Chloé": "Cvetno-puderaste note. Top: peoni, liči, frezija | Srce: ruža, jasmin, jorgovan | Baza: mošus, amber, cedar",
+    "Love Chloé": "Cvetno-puderaste note. Top: ružičasti biber, limun | Srce: ruža, jasmin, jorgovan | Baza: mošus, riža, iris",
+    "Hugo Woman": "Cvetno-voćne note. Top: jabuka, mandarina, kruška | Srce: jasmin, ruža, jorgovan | Baza: cedar, mošus, amber",
+    "Flora": "Cvetno-voćne note. Top: citrusi, kruška | Srce: gardenija, jasmin, ruža | Baza: sandalovina, mošus",
+    "Burberry for Women": "Cvetno-voćne note. Top: zelena jabuka, limun, bergamot | Srce: jasmin, ruža, sandalovina | Baza: mošus, vanila",
+    "Idôle": "Cvetno-svetle note. Top: bergamot, kruška | Srce: ruža, jasmin, cvet narandže | Baza: cedar, mošus, vanila",
+    "Born in Roma Donna Intense": "Cvetno-gurmanske note. Top: crna ribizla, ružičasti biber | Srce: jasmin, ruža, vanila | Baza: benzoin, tonka, mošus",
+    "Aventus for Her": "Cvetno-drvne note. Top: zelene note, jabuka, bergamot | Srce: ruža, jasmin, sandalovina | Baza: mošus, vanila, amber",
+    "Libre": "Cvetno-živahne note. Top: lavanda, mandarina, crna ribizla | Srce: jasmin, ruža, cvet narandže | Baza: vanila, mošus, cedar",
+    "Good Girl": "Orijenatalno-cvetne note. Top: badem, kafa | Srce: tuberoza, jasmin, ruža | Baza: tonka, kakao, sandalovina",
+    "My Way": "Cvetno-voćne note. Top: bergamot, narandžin cvet | Srce: tuberoza, jasmin, ruža | Baza: vanila, mošus, cedar",
+    "One Million": "Drveno-začinske note. Top: grejpfrut, menta, mandarina | Srce: ruža, cimet, začinske note | Baza: koža, drvene note, amber",
+    "Acqua di Gio": "Sveže-vodene note. Top: limun, bergamot, jasmin | Srce: morske note, ruža, jasmin | Baza: cedar, mošus, amber",
+    "Fahrenheit": "Drveno-začinske note. Top: mandarina, lavanda, limun | Srce: karanfil, jasmin, neroli | Baza: vetiver, koža, amber",
+    "Eau Sauvage": "Citrusno-aromatične note. Top: limun, bergamot, bazilika | Srce: karanfil, pelargonijum, jasmin | Baza: vetiver, mošus, amber",
+    "Roma Uomo": "Orijenatalno-drvne note. Top: grejpfrut, bazilika, bergamot | Srce: jasmin, heliotrop, cimet | Baza: cedar, sandalovina, koža",
+    "Le Male": "Aromatično-gurmanske note. Top: lavanda, menta, bergamot | Srce: cimet, karanfil, jasmin | Baza: vanila, tonka, sandalovina",
+    "Déclaration": "Drveno-aromatične note. Top: bergamot, mandarina, neroli | Srce: kardamon, jasmin, cimet | Baza: cedar, koža, vetiver",
+    "La Nuit de L'Homme": "Orijenatalno-drvne note. Top: kardamon, bergamot, lavanda | Srce: cedar, lavanda, kumin | Baza: vetiver, mošus, vanila",
+    "Light Blue Homme": "Sveže-citrusne note. Top: grejpfrut, bergamot, mandarina | Srce: bambus, ružičasti biber, jasmin | Baza: mošus, cedar, amber",
+    "Terre d'Hermès": "Drveno-citrusne note. Top: narandža, grejpfrut | Srce: biber, pelargonijum | Baza: vetiver, cedar, benzoin",
+    "Black XS": "Orijenatalno-drvne note. Top: limun, tagetes, kalabrijski bergamot | Srce: kardamon, kanela, lavanda | Baza: pačuli, amber, drvene note",
+    "Blu pour Homme": "Aromatično-drvne note. Top: kardamon, bergamot, ružičasti biber | Srce: cipresa, lavanda, neroli | Baza: sandalovina, pačuli, mošus",
+    "Spicebomb": "Začinsko-drvne note. Top: ružičasti biber, elemi, bergamot | Srce: cimet, safran, paprika | Baza: duhan, vetiver, koža",
+    "B. Man": "Drveno-aromatične note. Top: bergamot, limun, lavanda | Srce: jasmin, karanfil, cimet | Baza: sandalovina, mošus, amber",
+    "Bleu de Chanel": "Drveno-aromatične note. Top: limun, bergamot, menta | Srce: đumbir, jasmin, nutmeg | Baza: sandalovina, cedar, mošus",
+    "Allure Homme": "Orijenatalno-drvne note. Top: limun, mandarina, bergamot | Srce: karanfil, jasmin, cimet | Baza: sandalovina, vetiver, vanila",
+    "Pasha de Cartier": "Aromatično-drvne note. Top: lavanda, mandarina, menta | Srce: karanfil, kumin, sandalovina | Baza: oakmoss, pačuli, mošus",
+    "Invictus": "Drveno-vodene note. Top: morske note, grejpfrut, mandarina | Srce: lovor, jasmin, amber | Baza: sandalovina, mošus, cedar",
+    "Intenso": "Drveno-aromatične note. Top: bazilika, lavanda, limun | Srce: jasmin, ruža, tobacco | Baza: sandalovina, cedar, amber",
+    "Scent Intense": "Orijenatalno-drvne note. Top: kardamon, bergamot | Srce: jasmin, ruža, cimet | Baza: amber, sandalovina, mošus",
+    "Acqua di Sale": "Morsko-cvetne note. Top: morske note, limun | Srce: jasmin, ruža | Baza: mošus, cedar, amber",
+    "Myself": "Drveno-aromatične note. Top: bergamot, limun | Srce: jasmin, lavanda | Baza: sandalovina, cedar, mošus",
+    "Dylan Blue": "Aromatično-drvne note. Top: bergamot, grejpfrut, figa | Srce: jasmin, ruža, pačuli | Baza: safran, amber, mošus",
+    "Legend": "Drveno-aromatične note. Top: bergamot, lavanda, ananas | Srce: jasmin, geranijum, ruža | Baza: sandalovina, tonka, mošus",
+    "Wanted": "Citrusno-drvne note. Top: limun, đumbir, lavanda | Srce: jasmin, kardamon, javorov sirup | Baza: vetiver, tonka, mošus",
+    "Man in Black": "Začinsko-drvne note. Top: začini, rum, tobacco | Srce: koža, karanfil, iris | Baza: tonka, guaiac, sandalovina",
+    "Chrome": "Citrusno-aromatične note. Top: limun, bergamot, narandža | Srce: kikinda, jasmin, ruža | Baza: mošus, cedar, sandalovina",
+    "Eros": "Aromatično-drvne note. Top: menta, zelena jabuka, limun | Srce: tonka, ambroksan, geranijum | Baza: vanila, vetiver, cedar",
+    "Bottled Absolu": "Drveno-voćne note. Top: jabuka, bergamot, cimet | Srce: jasmin, lavanda, geranijum | Baza: sandalovina, cedar, mošus",
+    "Hugo": "Sveže-aromatične note. Top: jabuka, citrusi, lavanda | Srce: geranijum, jasmin, karanfil | Baza: cedar, sandalovina, mošus",
+    "Guilty pour Homme": "Aromatično-drvne note. Top: lavanda, limun | Srce: jasmin, ruža, cimet | Baza: pačuli, amber, vanila",
+    "B. The Scent": "Aromatično-začinske note. Top: đumbir, bergamot, mandarina | Srce: lavanda, pelargonijum, maninka | Baza: koža, cedar, mošus",
+    "Burberry for Men": "Drveno-aromatične note. Top: bergamot, lavanda, menta | Srce: sandalovina, cedar, geranijum | Baza: mošus, vanila, amber",
+    "Born in Roma Uomo Intense": "Vanila-drvne note. Top: vanila, lavanda | Srce: vetiver, jasmin | Baza: mošus, cedar, amber",
+    "Millésime Afgano": "Konopljasto-drvne note. Top: konoplja, zelene note | Srce: drvene note, začini | Baza: amber, mošus, pačuli",
+    "Aventus": "Cvetno-drvne note. Top: ananas, bergamot, crna ribizla | Srce: ruža, jasmin, pačuli | Baza: mošus, oakmoss, amber",
+    "Sauvage": "Sveže-drvne note. Top: bergamot, biber | Srce: lavanda, papar, jasmin | Baza: ambroksan, cedar, labdanum",
+    "Green Irish Tweed": "Sveže-drvne note. Top: limun, verbena, iris | Srce: ljiljan, jasmin, fiołak | Baza: sandalovina, amber, mošus",
+    "Sur La Route": "Citrusno-drvne note. Top: limun, bergamot, ružičasti biber | Srce: jasmin, ruža, cimet | Baza: mošus, cedar, vanila",
+    "Homme Intense": "Cvetno-drvne note. Top: lavanda, bergamot | Srce: jasmin, ruža, iris | Baza: vetiver, cedar, amber",
+    "Silver Mountain Water": "Sveže-metalne note. Top: bergamot, mandarina | Srce: zeleni čaj, crna ribizla | Baza: sandalovina, mošus, amber",
+    "Black Orchid": "Orijenatalno-cvetne note. Top: jasmin, gardenija, bergamot | Srce: orchideja, jasmin, lotos | Baza: pačuli, vanila, mošus",
+    "Patchouli": "Pačuli-orijentalne note. Top: pačuli, zelene note | Srce: ruža, jasmin | Baza: vanila, amber, mošus",
+    "Himalaya": "Sveže-drvne note. Top: limun, bergamot, mandarina | Srce: jasmin, ruža, fiołak | Baza: sandalovina, cedar, amber",
+    "Mandarino di Amalfi": "Citrusno-sveže note. Top: mandarina, limun, bergamot | Srce: jasmin, ruža, narandžin cvet | Baza: mošus, amber, vetiver",
+    "White Aoud": "Drveno-cvetne note. Top: pačuli, ruža | Srce: oud, sandalovina | Baza: vanila, mošus, amber",
+    "Intense Café": "Gurmansko-cvetne note. Top: kafa, ruža | Srce: kafa, ruža, vanila | Baza: amber, mošus, sandalovina",
+    "Kirke": "Voćno-cvetne note. Top: breskva, kruška, limun | Srce: jasmin, ruža, osmantus | Baza: vanila, praline, sandalovina",
+    "Ombre Nomade": "Drveno-dimne note. Top: oud, začini | Srce: ruža, jasmin, drvene note | Baza: amber, vanila, mošus",
+    "Bois d'Argent": "Drveno-cvetne note. Top: iris, cipresa | Srce: jasmin, ruža, mirisno drvo | Baza: amber, mošus, vanila",
+    "Ombre Leather": "Kožno-drvne note. Top: kardamon, ružičasti biber | Srce: jasmin, ruža, iris | Baza: koža, amber, pačuli",
+    "CK One": "Citrusno-aromatične note. Top: limun, bergamot, mandarina | Srce: jasmin, ruža, zeleni čaj | Baza: mošus, cedar, amber",
+    "Black Afgano": "Konopljasto-drvne note. Top: kanabis, zelene note | Srce: drvene note, kafa | Baza: oud, tamjan, mošus",
+    "X for Men": "Orijenatalno-drvne note. Top: bergamot, cimet | Srce: jasmin, ruža, iris | Baza: vanila, amber, sandalovina",
+    "Velvet Amber Sun": "Amber-cvetne note. Top: bergamot, mandarina | Srce: jasmin, ruža, ylang-ylang | Baza: amber, vanila, sandalovina",
+    "Megamare": "Morsko-drvne note. Top: morske note, citrusi | Srce: alge, jasmin | Baza: drvene note, amber, mošus",
+    "Bitter Peach": "Voćno-drvne note. Top: breskva, krvna narandža | Srce: jasmin, ruža, kardamon | Baza: vanila, pačuli, sandalovina",
+    "Whisper Sandal Wood": "Sandalovina-drvne note. Top: sandalovina, bergamot | Srce: jasmin, ruža, cedar | Baza: sandalovina, vanila, amber",
+    "Velvet Amber Skin": "Amber-gurmanske note. Top: mandarina, kruška | Srce: jasmin, ruža, amber | Baza: vanila, sandalovina, mošus",
+    "J'adore L'Or": "Cvetno-luksuzne note. Top: jasmin, ruža | Srce: tuberoza, jasmin, ylang-ylang | Baza: vanila, amber, sandalovina",
+    "Lost Cherry": "Voćno-gurmanske note. Top: višnja, kajsija, jasmin | Srce: rum, karanfil, šljiva | Baza: sandalovina, vetiver, pačuli",
+    "Neroli Portofino": "Citrusno-aromatične note. Top: bergamot, mandarina, limun | Srce: neroli, jasmin, ruža | Baza: amber, mošus",
+    "Good Girl Gone Bad": "Cvetno-voćne note. Top: jasmin, ruža, osmantus | Srce: tuberoza, narcis | Baza: amber, cedar",
+    "Naxos": "Medeno-tobak note. Top: lavanda, bergamot | Srce: med, karanfil, cimet | Baza: tobacco, vanila, tonka",
+    "Les Sables Roses": "Ruža-drvne note. Top: ruža, oud | Srce: ruža, sandalovina | Baza: amber, mošus",
+    "Vanilla Powder": "Vanila-gurmanske note. Top: vanila, kokos | Srce: jasmin, ruža | Baza: vanila, sandalovina, mošus",
+    "Bianco Latte": "Mlečno-gurmanske note. Top: mleko, med | Srce: jasmin, ruža | Baza: vanila, karamel, mošus",
+    "Fucking Fabulous": "Kožno-drvne note. Top: lavanda, kardamon | Srce: koža, jasmin, ruža | Baza: amber, sandalovina, tonka",
+    "Tobacco Vanille": "Tobak-gurmanske note. Top: tobacco, začinske note | Srce: tonka, tobacco, vanila | Baza: suvo voće, mošus",
+    "Zeta": "Cvetno-drvne note. Top: bergamot, limun | Srce: jasmin, ruža | Baza: sandalovina, cedar, amber",
+    "Soleil Blanc": "Kokosno-cvetne note. Top: bergamot, kardamon, ružičasti biber | Srce: jasmin, tuberoza, ylang-ylang | Baza: kokos, amber, vanila",
+    "Oud Wood": "Oud-drvne note. Top: oud, ružičasti biber | Srce: sandalovina, vetiver | Baza: vanila, amber, tonka",
+    "Vanille Fatale": "Vanila-drvne note. Top: vanila, kardamon | Srce: jasmin, ruža | Baza: vanila, sandalovina, amber",
+    "Dubai Turath": "Orijenatalno-drvne note. Top: safran, ruža | Srce: oud, sandalovina | Baza: amber, mošus, vanila",
+    "Sole di Positano": "Citrusno-cvetne note. Top: limun, bergamot, mandarina | Srce: jasmin, ruža, neroli | Baza: mošus, amber",
+    "Erba Pura": "Voćno-cvetne note. Top: citrusi, voće | Srce: jasmin, ruža, osmantus | Baza: vanila, amber, mošus",
+    "Baccarat Rouge 540": "Amber-cvetne note. Top: šafran, jasmin | Srce: ambergris, amber | Baza: mošus, cedar, drvene note",
+    "Rouge Pierre": "Cvetno-živahne note. Top: bergamot, limun | Srce: jasmin, ruža | Baza: amber, vanila, mošus",
+    "Nadir": "Ekskluzivno-drvne note. Top: bergamot, limun | Srce: jasmin, ruža | Baza: sandalovina, amber, mošus",
+    "Multiverse": "Futurističko-cvetne note. Top: citrusi, zelene note | Srce: jasmin, ruža | Baza: vanila, cedar, amber",
+    "Event 22": "Limited edition note. Top: bergamot, mandarina | Srce: jasmin, ruža | Baza: amber, sandalovina",
+    "Event23M": "Muške event note. Top: limun, bergamot | Srce: jasmin, lavanda | Baza: cedar, mošus, amber",
+    "Event23W": "Ženske event note. Top: ruža, jasmin | Srce: vanila, jasmin | Baza: sandalovina, amber",
+    "Imperatrix": "Carsko-cvetne note. Top: bergamot, ruža | Srce: jasmin, tuberoza | Baza: vanila, amber, mošus",
+    "Astral": "Svemirsko-drvne note. Top: citrusi, zelene note | Srce: jasmin, ruža | Baza: amber, sandalovina, mošus"
+};
+
+// SHOPPING CART
+let cart = [];
+
+// Get notes for perfume
+function getPerfumeNotes(inspiration) {
+    return perfumeNotes[inspiration] || "Cvetno-drvene note sa elegantnim balansom svežine i topline. Dugotrajan miris pogodan za sve prilike.";
+}
+
+// Toggle cart sidebar
+function toggleCart() {
+    const sidebar = document.getElementById('cartSidebar');
+    const overlay = document.getElementById('cartOverlay');
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('open');
+    document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+}
+
+// Add to cart
+function addToCart(perfumeId, name, inspiration, size, price, category) {
+    const existingItem = cart.find(item => item.id === perfumeId && item.size === size);
+
+    if (existingItem) {
+        existingItem.qty += 1;
+    } else {
+        cart.push({
+            id: perfumeId,
+            name: name,
+            inspiration: inspiration,
+            size: size,
+            price: price,
+            qty: 1,
+            category: category
+        });
+    }
+
+    updateCart();
+    showAddedFeedback(perfumeId);
+}
+
+// Show added feedback
+function showAddedFeedback(perfumeId) {
+    const btn = document.querySelector(`[data-perfume-id="${perfumeId}"]`);
+    if (btn) {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Dodato!';
+        btn.classList.add('added');
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.classList.remove('added');
+        }, 1500);
+    }
+}
+
+// Update cart display
+function updateCart() {
+    const cartItems = document.getElementById('cartItems');
+    const cartCount = document.getElementById('cartCount');
+    const cartFooter = document.getElementById('cartFooter');
+    const cartTotal = document.getElementById('cartTotal');
+
+    cartCount.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = `
+            <div class="cart-empty">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <p>Vaša korpa je prazna</p>
+                <p style="font-size: 0.9rem; margin-top: 10px;">Dodajte parfeme iz kolekcije</p>
+            </div>
+        `;
+        cartFooter.style.display = 'none';
+    } else {
+        let total = 0;
+        cartItems.innerHTML = cart.map((item, index) => {
+            const priceValue = parseFloat(item.price.replace('€', '').replace('+', ''));
+            const itemTotal = priceValue * item.qty;
+            total += itemTotal;
+
+            return `
+                <div class="cart-item">
+                    <div class="cart-item-image">
+                        <img src="${getPerfumeImage(item.category, item.id, item.name)}" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-size">${item.size}</div>
+                        <div class="cart-item-price">${item.price} / kom</div>
+                        <div class="cart-item-actions">
+                            <button class="qty-btn" onclick="updateQty(${index}, -1)">-</button>
+                            <span class="cart-item-qty">${item.qty}</span>
+                            <button class="qty-btn" onclick="updateQty(${index}, 1)">+</button>
+                            <button class="remove-item" onclick="removeItem(${index})">Ukloni</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        cartTotal.textContent = total + '€';
+        cartFooter.style.display = 'block';
+    }
+}
+
+// Update quantity
+function updateQty(index, change) {
+    cart[index].qty += change;
+    if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+    }
+    updateCart();
+}
+
+// Remove item
+function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+// Checkout via WhatsApp
+function checkout() {
+    if (cart.length === 0) return;
+
+    let message = "Zdravo! Želim da poručim sledeće parfeme:\n\n";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        const priceValue = parseFloat(item.price.replace('€', '').replace('+', ''));
+        const itemTotal = priceValue * item.qty;
+        total += itemTotal;
+        message += `${index + 1}. *${item.name}*\n`;
+        message += `   Veličina: ${item.size}\n`;
+        message += `   Količina: ${item.qty}\n`;
+        message += `   Cena: ${item.price}\n\n`;
+    });
+
+    message += `*UKUPNO: ${total}€*\n\n`;
+    message += "Molim vas za informacije o dostupnosti i načinu plaćanja. Hvala!";
+
+    const whatsappUrl = `https://wa.me/381605415570?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+}
+
+// Store selected sizes
+let selectedSizes = {};
+
+// Select size
+function selectSize(perfumeId, size, price, btn) {
+    selectedSizes[perfumeId] = { size, price };
+
+    // Update UI
+    const card = btn.closest('.product-card');
+    card.querySelectorAll('.size-option').forEach(opt => opt.classList.remove('selected'));
+    btn.classList.add('selected');
+
+    // Enable add to cart button
+    const addBtn = card.querySelector('.btn-add-cart');
+    addBtn.disabled = false;
+}
+
+// Get perfume image helper
+function getPerfumeImage(category, id, name) {
+    if (category === 'Event') {
+        const eventImages = {
+            'Nadir': 'Nadir.png',
+            'Multiverse': 'Multiverse.png',
+            'Event 22': 'Event22.png',
+            'Event23M': 'Event23M.png',
+            'Event23W': 'Event23W.png',
+            'Imperatrix': 'Imperatrix.png',
+            'Astral': 'Astral.png'
+        };
+        const eventName = Object.keys(eventImages).find(key => name.includes(key));
+        if (eventName) return baseUrl + eventImages[eventName];
+        return baseUrl + 'Astral.png';
+    }
+
+    if (category === 'Luksuzni') {
+        const bojaFiles = {
+            'Crna': 'Crni.png',
+            'Bela': 'Beli.png',
+            'Zlatna': 'Zlatni.png',
+            'Plava': 'Plavi.png',
+            'Crvena': 'Crveni.png'
+        };
+        const perfume = perfumes.find(p => p.id == id);
+        if (perfume && perfume.boja) {
+            return baseUrl + bojaFiles[perfume.boja];
+        }
+        return baseUrl + 'Zlatni.png';
+    }
+
+    if (category === 'Muški' || category === 'Muški Premium' || category === 'Unisex') {
+        return baseUrl + 'Muski%20parfem.png';
+    }
+
+    return baseUrl + 'Zenski%20parfem.png';
+}
+
+// Add to cart from card
+function addToCartFromCard(perfumeId, name, inspiration, category) {
+    const selected = selectedSizes[perfumeId];
+    if (!selected) {
+        alert('Molimo izaberite veličinu pre dodavanja u korpu');
+        return;
+    }
+
+    addToCart(perfumeId, name, inspiration, selected.size, selected.price, category);
+}
+
 </script>
