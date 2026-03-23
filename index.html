@@ -1810,19 +1810,19 @@
         }
 
         // TVOJE SLIKE SA GITHUBA
-        const baseUrl = 'https://raw.githubusercontent.com/choganluxrs/choganluxrs/main/';
+        const baseUrl = 'https://raw.githubusercontent.com/choganluxrs/choganluxrs/main/images/';
 
         const getPerfumeImage = (category, id, name) => {
             // Event parfemi - posebne slike
             if (category === 'Event') {
                 const eventImages = {
-                    'Nadir': 'Nadir.jpg',
+                    'Nadir': 'Nadir.png',
                     'Multiverse': 'Multiverse.png',
-                    'Event 22': 'Event%2022.jpg',
-                    'Event23M': 'Event23M.jpg',
-                    'Event23W': 'Event23W.jpg',
-                    'Imperatrix': 'Imperatrix.jpg',
-                    'Astral': 'Astral.jpg'
+                    'Event 22': 'Event%2022.png',
+                    'Event23M': 'Event23M.png',
+                    'Event23W': 'Event23W.png',
+                    'Imperatrix': 'Imperatrix.png',
+                    'Astral': 'Astral.png'
                 };
                 
                 // Pronađi ime event parfema
@@ -1837,11 +1837,11 @@
             if (category === 'Luksuzni') {
                 const boja = getBojaParfema(id);
                 const bojaFiles = {
-                    'Crni': 'Crni.jpg',
-                    'Beli': 'Beli.jpg',
+                    'Crni': 'Crni.png',
+                    'Beli': 'Beli.png',
                     'Zlatni': 'Zlatni.png',
                     'Plavi': 'Plavi.png',
-                    'Crveni': 'Crveni.jpg'
+                    'Crveni': 'Crveni.png'
                 };
                 return baseUrl + bojaFiles[boja];
             }
@@ -2041,11 +2041,11 @@
         // Render boja badge za luksuzne
         function renderBojaBadge(boja) {
             const bojaColors = {
-                'Crni': '#1a1a1a',
-                'Beli': '#f5f5f5',
-                'Zlatni': '#D4AF37',
-                'Plavi': '#4A90E2',
-                'Crveni': '#DC143C'
+                'Crna bočica': '#1a1a1a',
+                'Bela bočica': '#f5f5f5',
+                'Zlatna bočica': '#D4AF37',
+                'Plava bočica': '#4A90E2',
+                'Crvena bočica': '#DC143C'
             };
             
             return `<span style="display: inline-flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; margin-bottom: 10px;">
@@ -2071,11 +2071,11 @@
                     image = baseUrl + p.slika;
                 } else if (p.category === 'Luksuzni' && p.boja) {
                     const bojaFiles = {
-                        'Crni': 'Crni.jpg',
-                        'Beli': 'Beli.jpg',
+                        'Crni': 'Crni.png',
+                        'Beli': 'Beli.png',
                         'Zlatni': 'Zlatni.png',
                         'Plavi': 'Plavi.png',
-                        'Crveni': 'Crveni.jpg'
+                        'Crveni': 'Crveni.png'
                     };
                     image = baseUrl + bojaFiles[p.boja];
                 } else if (p.category === 'Muški' || p.category === 'Muški Premium' || p.category === 'Unisex') {
