@@ -2193,11 +2193,18 @@
 
     <script>
         // LOADER
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loader').classList.add('hidden');
-            }, 1500);
-        });
+        window.addEventListener('load', function() {
+    setTimeout(function() {
+        var loader = document.getElementById('loader');
+        if (loader) {
+            loader.style.opacity = '0';
+            loader.style.visibility = 'hidden';
+            setTimeout(function() {
+                loader.style.display = 'none';
+            }, 500);
+        }
+    }, 1500);
+});
 
         // NAVBAR SCROLL
         window.addEventListener('scroll', () => {
