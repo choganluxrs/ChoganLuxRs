@@ -2899,45 +2899,6 @@ function selectSize(perfumeId, size, price, btn) {
     addBtn.disabled = false;
 }
 
-// Get perfume image helper (reuse existing)
-function getPerfumeImageHelper(category, id, name) {
-    if (category === 'Event') {
-        const eventImages = {
-            'Nadir': 'Nadir.png',
-            'Multiverse': 'Multiverse.png',
-            'Event 22': 'Event22.png',
-            'Event23M': 'Event23M.png',
-            'Event23W': 'Event23W.png',
-            'Imperatrix': 'Imperatrix.png',
-            'Astral': 'Astral.png'
-        };
-        const eventName = Object.keys(eventImages).find(key => name.includes(key));
-        if (eventName) return baseUrl + eventImages[eventName];
-        return baseUrl + 'Astral.png';
-    }
-
-    if (category === 'Luksuzni') {
-        const bojaFiles = {
-            'Crna': 'Crni.png',
-            'Bela': 'Beli.png',
-            'Zlatna': 'Zlatni.png',
-            'Plava': 'Plavi.png',
-            'Crvena': 'Crveni.png'
-        };
-        const perfume = perfumes.find(p => p.id == id);
-        if (perfume && perfume.boja) {
-            return baseUrl + bojaFiles[perfume.boja];
-        }
-        return baseUrl + 'Zlatni.png';
-    }
-
-    if (category === 'Muški' || category === 'Muški Premium' || category === 'Unisex') {
-        return baseUrl + 'Muski%20parfem.png';
-    }
-
-    return baseUrl + 'Zenski%20parfem.png';
-}
-
 // Add to cart from card
 function addToCartFromCard(perfumeId, name, inspiration, category) {
     const selected = selectedSizes[perfumeId];
