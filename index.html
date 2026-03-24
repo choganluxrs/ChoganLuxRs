@@ -2250,7 +2250,7 @@
         // TVOJE SLIKE SA GITHUBA
         const baseUrl = 'https://raw.githubusercontent.com/choganluxrs/choganluxrs/main/images/';
 
-        const getPerfumeImage = (category, id, name) => {
+        const getPerfumeImageHelper = (category, id, name) => {
             // Event parfemi - posebne slike
             if (category === 'Event') {
                 const eventImages = {
@@ -2821,7 +2821,7 @@ function updateCart() {
             return `
                 <div class="cart-item">
                     <div class="cart-item-image">
-                        <img src="${getPerfumeImage(item.category, item.id, item.name)}" alt="${item.name}">
+                        <img src="${getPerfumeImageHelper(item.category, item.id, item.name)}" alt="${item.name}">
                     </div>
                     <div class="cart-item-details">
                         <div class="cart-item-name">${item.name}</div>
@@ -2899,8 +2899,8 @@ function selectSize(perfumeId, size, price, btn) {
     addBtn.disabled = false;
 }
 
-// Get perfume image helper
-function getPerfumeImage(category, id, name) {
+// Get perfume image helper (reuse existing)
+function getPerfumeImageHelper(category, id, name) {
     if (category === 'Event') {
         const eventImages = {
             'Nadir': 'Nadir.png',
