@@ -117,6 +117,11 @@
             color: var(--gold-primary);
             font-weight: 700;
             letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .nav-logo {
+            font-size: 1.3rem;
         }
 
         .nav-links {
@@ -151,6 +156,83 @@
 
         .nav-links a:hover::after {
             width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--black-soft);
+            z-index: 2000;
+            transition: right 0.4s ease;
+            padding: 80px 40px;
+            box-shadow: -10px 0 40px rgba(0,0,0,0.5);
+        }
+
+        .mobile-menu.open {
+            right: 0;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        .mobile-menu-links {
+            list-style: none;
+        }
+
+        .mobile-menu-links li {
+            margin-bottom: 25px;
+        }
+
+        .mobile-menu-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .mobile-menu-links a:hover {
+            color: var(--gold-primary);
+            padding-left: 10px;
         }
 
         .hero {
@@ -351,6 +433,13 @@
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .about-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .about-card::before {
@@ -459,6 +548,13 @@
             background: rgba(255,255,255,0.03);
             border-radius: 10px;
             border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            background: rgba(212,175,55,0.05);
+            border-color: rgba(212,175,55,0.2);
+            transform: translateX(5px);
         }
 
         .feature-icon {
@@ -533,6 +629,13 @@
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .pricing-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .pricing-card.featured {
@@ -551,6 +654,15 @@
             font-size: 0.75rem;
             font-weight: 700;
             transform: rotate(45deg);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
         }
 
         .pricing-card h3 {
@@ -607,6 +719,13 @@
             margin-bottom: 15px;
             overflow: hidden;
             transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .faq-item.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .faq-item:hover {
@@ -689,6 +808,13 @@
             padding: 40px 30px;
             text-align: center;
             transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .contact-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .contact-card:hover {
@@ -707,6 +833,11 @@
             justify-content: center;
             margin: 0 auto 20px;
             color: var(--black-deep);
+            transition: var(--transition);
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .contact-card h3 {
@@ -725,10 +856,22 @@
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
+            position: relative;
         }
 
-        .contact-card a:hover {
-            color: var(--gold-light);
+        .contact-card a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold-primary);
+            transition: width 0.3s ease;
+        }
+
+        .contact-card a:hover::after {
+            width: 100%;
         }
 
         .collection {
@@ -856,6 +999,7 @@
             transition: var(--transition);
             opacity: 0;
             transform: translateY(30px);
+            position: relative;
         }
 
         .product-card.visible {
@@ -902,6 +1046,56 @@
 
         .product-card:hover .product-image img {
             transform: scale(1.1);
+        }
+
+        .product-hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover .product-hover-overlay {
+            opacity: 1;
+        }
+
+        .quick-view-btn {
+            background: var(--gold-primary);
+            color: var(--black-deep);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .quick-view-btn {
+            transform: translateY(0);
+        }
+
+        .skeleton-loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--black-card) 25%, var(--black-soft) 50%, var(--black-card) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
 
         .product-info {
@@ -1017,6 +1211,17 @@
             text-align: center;
         }
 
+        .stat-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .stat-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .stat-item h4 {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
@@ -1102,10 +1307,12 @@
             font-size: 0.95rem;
             display: block;
             margin-bottom: 8px;
+            transition: var(--transition);
         }
 
         .footer-col a:hover {
             color: var(--gold-primary);
+            padding-left: 5px;
         }
 
         .social-links {
@@ -1139,6 +1346,47 @@
             font-size: 0.9rem;
         }
 
+        .newsletter {
+            margin-top: 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 25px;
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+        }
+
+        .newsletter-btn {
+            padding: 12px 20px;
+            background: var(--gold-primary);
+            color: var(--black-deep);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .newsletter-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(212,175,55,0.3);
+        }
+
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -1159,6 +1407,163 @@
             100% { transform: translate(-50%, 15px); opacity: 0; }
         }
 
+        /* Toast Notifications */
+        .toast-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 3000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toast {
+            background: var(--black-soft);
+            border: 1px solid var(--gold-primary);
+            border-radius: 10px;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            transform: translateX(400px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            min-width: 300px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(212,175,55,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-primary);
+            flex-shrink: 0;
+        }
+
+        .toast-content h4 {
+            color: var(--white);
+            font-size: 0.95rem;
+            margin-bottom: 3px;
+        }
+
+        .toast-content p {
+            color: var(--gray-light);
+            font-size: 0.85rem;
+        }
+
+        /* Quick View Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--black-soft);
+            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(212,175,55,0.2);
+        }
+
+        .modal-overlay.open .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: var(--gold-primary);
+            color: var(--black-deep);
+        }
+
+        .modal-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .modal-image {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-info .inspiration {
+            color: var(--gold-primary);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .modal-notes {
+            background: rgba(212,175,55,0.05);
+            border-left: 3px solid var(--gold-primary);
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.8);
+        }
+
         @media (max-width: 968px) {
             .navbar {
                 padding: 15px 20px;
@@ -1166,6 +1571,10 @@
             
             .nav-links {
                 display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
             }
             
             .olfazeta-content {
@@ -1188,6 +1597,25 @@
             
             .pricing-card.featured {
                 transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: scale(1) translateY(-10px);
+            }
+
+            .modal-body {
+                grid-template-columns: 1fr;
+            }
+
+            .toast-container {
+                right: 10px;
+                left: 10px;
+                bottom: 10px;
+            }
+
+            .toast {
+                min-width: auto;
+                width: 100%;
             }
         }
 
@@ -1230,22 +1658,12 @@
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-        }
 
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--white);
-            cursor: pointer;
-        }
-
-        @media (max-width: 968px) {
-            .mobile-menu-btn {
-                display: block;
+            .newsletter-form {
+                flex-direction: column;
             }
         }
-    
+
         .cart-icon {
             position: fixed;
             top: 20px;
@@ -1636,6 +2054,24 @@
         </div>
     </div>
 
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="quickViewModal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
     <nav class="navbar" id="navbar">
         <div class="nav-logo">CHOGANLUXRS</div>
         <ul class="nav-links">
@@ -1645,7 +2081,7 @@
             <li><a href="#kolekcija">Kolekcija</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
         </ul>
-        <button class="mobile-menu-btn" onclick="toggleMenu()">
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="3" y1="12" x2="21" y2="12"></line>
                 <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -1653,6 +2089,24 @@
             </svg>
         </button>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <ul class="mobile-menu-links">
+            <li><a href="#home" onclick="toggleMobileMenu()">Početna</a></li>
+            <li><a href="#o-nama" onclick="toggleMobileMenu()">O nama</a></li>
+            <li><a href="#cenovnik" onclick="toggleMobileMenu()">Cenovnik</a></li>
+            <li><a href="#kolekcija" onclick="toggleMobileMenu()">Kolekcija</a></li>
+            <li><a href="#kontakt" onclick="toggleMobileMenu()">Kontakt</a></li>
+        </ul>
+    </div>
 
     <div class="cart-icon" onclick="toggleCart()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2146,6 +2600,16 @@
                 <p>Facebook: ChoganLuxRS</p>
                 <p>Srbija | Chogan Official Ambasador</p>
             </div>
+            <div class="footer-col">
+                <h3>Budite u Toku</h3>
+                <p>Prijavite se na naš newsletter za ekskluzivne ponude i novitete.</p>
+                <div class="newsletter">
+                    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                        <input type="email" class="newsletter-input" placeholder="Vaš email" required>
+                        <button type="submit" class="newsletter-btn">Prijavi se</button>
+                    </form>
+                </div>
+            </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2024 ChoganLuxRS. Sva prava zadržana. | Ovlašćeni distributer Chogan proizvoda za Srbiju.</p>
@@ -2329,6 +2793,109 @@
             
             if (!isActive) {
                 faqItem.classList.add('active');
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            menu.classList.toggle('open');
+            overlay.classList.toggle('open');
+            document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+        }
+
+        // Toast Notification System
+        function showToast(title, message, type = 'success') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            
+            const icon = type === 'success' ? 
+                '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>' :
+                '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>';
+            
+            toast.innerHTML = `
+                <div class="toast-icon">${icon}</div>
+                <div class="toast-content">
+                    <h4>${title}</h4>
+                    <p>${message}</p>
+                </div>
+            `;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => toast.classList.add('show'), 100);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 400);
+            }, 3000);
+        }
+
+        // Quick View Modal
+        function openQuickView(perfumeId) {
+            const perfume = perfumes.find(p => p.id === perfumeId);
+            if (!perfume) return;
+            
+            const modal = document.getElementById('quickViewModal');
+            const modalBody = document.getElementById('modalBody');
+            const notes = perfumeNotes[perfume.inspiration] || 'Luksuzne mirisne note';
+            const isLuxury = perfume.category === 'Luksuzni' || perfume.category === 'Event';
+            
+            let sizesHtml = '';
+            if (isLuxury) {
+                sizesHtml = `<button class="size-option selected">50ml - ${perfume.price50}</button>`;
+            } else {
+                sizesHtml = `
+                    <button class="size-option selected">30ml - ${perfume.price30}</button>
+                    <button class="size-option">70ml - ${perfume.price70}</button>
+                    ${perfume.hasRefill ? '<button class="size-option">Refill 15ml - 10€</button>' : ''}
+                `;
+            }
+            
+            modalBody.innerHTML = `
+                <div class="modal-image">
+                    <img src="${getPerfumeImage(perfume)}" alt="${perfume.name}" onerror="this.src='${baseUrl}Zenski%20parfem.png'">
+                </div>
+                <div class="modal-info">
+                    <h2>${perfume.inspiration}</h2>
+                    <p class="inspiration">${perfume.name} • ${perfume.category}</p>
+                    <div class="modal-notes">
+                        <strong>Mirisne note:</strong><br>
+                        ${notes}
+                    </div>
+                    <div class="size-selection" style="margin: 20px 0;">
+                        ${sizesHtml}
+                    </div>
+                    <button class="btn-add-cart" onclick="addToCart(${perfume.id}); closeModal();" style="margin-top: 20px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        Dodaj u korpu
+                    </button>
+                </div>
+            `;
+            
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            const modal = document.getElementById('quickViewModal');
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // Newsletter Handler
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const input = e.target.querySelector('input');
+            if (input.value) {
+                showToast('Uspešno!', 'Hvala na prijavi na newsletter.', 'success');
+                input.value = '';
             }
         }
 
@@ -2601,7 +3168,11 @@
             card.innerHTML = `
                 <div class="product-image">
                     ${perfume.category.includes('Premium') || isLuxury ? '<span class="product-badge">Premium</span>' : ''}
-                    <img src="${getPerfumeImage(perfume)}" alt="${perfume.name}" loading="lazy" onerror="this.src='${baseUrl}Zenski%20parfem.png'">
+                    <div class="skeleton-loader"></div>
+                    <img src="${getPerfumeImage(perfume)}" alt="${perfume.name}" loading="lazy" onerror="this.src='${baseUrl}Zenski%20parfem.png'" onload="this.previousElementSibling.style.display='none'">
+                    <div class="product-hover-overlay">
+                        <button class="quick-view-btn" onclick="openQuickView(${perfume.id})">Brzi pregled</button>
+                    </div>
                 </div>
                 <div class="product-info">
                     <span class="product-number">Chogan ${String(perfume.id).padStart(3, '0')}</span>
@@ -2649,6 +3220,7 @@
             
             if (existingItem) {
                 existingItem.quantity += 1;
+                showToast('Ažurirano!', `${perfume.inspiration} (${size}) količina povećana.`);
             } else {
                 cart.push({
                     id: perfumeId,
@@ -2659,35 +3231,17 @@
                     quantity: 1,
                     image: getPerfumeImage(perfume)
                 });
+                showToast('Dodato u korpu!', `${perfume.inspiration} (${size}) uspešno dodato.`);
             }
             
             updateCartUI();
-            
-            const btn = card.querySelector('.btn-add-cart');
-            btn.classList.add('added');
-            btn.innerHTML = `
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                Dodato!
-            `;
-            
-            setTimeout(() => {
-                btn.classList.remove('added');
-                btn.innerHTML = `
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <path d="M16 10a4 4 0 0 1-8 0"></path>
-                    </svg>
-                    Dodaj u korpu
-                `;
-            }, 1500);
         }
 
         function removeFromCart(index) {
+            const item = cart[index];
             cart.splice(index, 1);
             updateCartUI();
+            showToast('Uklonjeno', `${item.inspiration} uklonjeno iz korpe.`);
         }
 
         function updateQuantity(index, change) {
@@ -2777,10 +3331,6 @@
             window.open(`https://wa.me/381605415570?text=${message}`, '_blank');
         }
 
-        function toggleMenu() {
-            alert('Mobile menu - u izradi');
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
             renderProducts();
             
@@ -2818,7 +3368,7 @@
                 });
             }, observerOptions);
             
-            document.querySelectorAll('.about-card, .pricing-card, .contact-card, .faq-item').forEach(el => {
+            document.querySelectorAll('.about-card, .pricing-card, .contact-card, .faq-item, .stat-item').forEach(el => {
                 observer.observe(el);
             });
         });
